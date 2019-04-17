@@ -13,12 +13,15 @@ class PetRoom extends Component {
       >
         <View style={styles.overlayContainer}>
           <View style={styles.menuContainer}>
-            <FoodButtons itemImage={require("../assets/choco.png")} />
-            <FoodButtons itemImage={require("../assets/meat.png")} />
-            <FoodButtons itemImage={require("../assets/water.png")} />
-            <FoodButtons itemImage={require("../assets/toy3.png")} />
-            <FoodButtons itemImage={require("../assets/toy1.png")} />
-            <FoodButtons itemImage={require("../assets/toy2.png")} />
+            <FoodButtons
+              itemImage={require("../assets/choco.png")}
+              foodtype={"Chocolate"}
+            />
+            {/* <FoodButtons itemImage={require("../assets/meat.png")} foodtype={""}/>
+            <FoodButtons itemImage={require("../assets/water.png")} foodtype={}/>
+            <FoodButtons itemImage={require("../assets/toy3.png")} foodtype={}/>
+            <FoodButtons itemImage={require("../assets/toy1.png")} foodtype={}/>
+            <FoodButtons itemImage={require("../assets/toy2.png")} foodtype={}/> */}
           </View>
         </View>
       </ImageBackground>

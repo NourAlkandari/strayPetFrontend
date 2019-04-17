@@ -1,12 +1,19 @@
 import React, { Component } from "react";
-import { StyleSheet, Image, View } from "react-native";
+import { StyleSheet, Image, View, TouchableOpacity } from "react-native";
+
+import PetStore from "../Store/PetStore";
 
 class FoodButtons extends Component {
+  handlepress = () => {
+    PetStore.dogFeed(this.props.foodtype);
+  };
   render() {
     return (
       <>
         <View style={styles.menuItem}>
-          <Image source={this.props.itemImage} style={styles.image} />
+          <TouchableOpacity onPress={this.handlepress}>
+            <Image source={this.props.itemImage} style={styles.image} />
+          </TouchableOpacity>
         </View>
       </>
     );
