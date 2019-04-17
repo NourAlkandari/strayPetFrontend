@@ -1,17 +1,19 @@
 import React from "react";
-
-import Home from "./Components/Home";
-//Navigator
-import AppContainer from "./navigation/index";
-// import { Font, AppLoading } from "expo";
+// import { StyleSheet, Text, View } from "react-native";
+import AppContainer from "./navigation";
 
 class App extends React.Component {
   render() {
-    return (
-      <>
-        <AppContainer />
-      </>
-    );
+    return <AppContainer />;
   }
 }
 export default App;
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: "#fff",
+//     alignItems: "center",
+//     justifyContent: "center"
+//   }
+// });

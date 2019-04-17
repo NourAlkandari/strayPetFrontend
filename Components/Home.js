@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { TextInput, View, StyleSheet, Text } from "react-native";
 import Button from "./button";
-import colors from "./colors";
 
 const style = StyleSheet.create({
   view: {
@@ -48,11 +47,11 @@ class Home extends Component {
   render() {
     return (
       <View style={style.view}>
-        <Text style={style.input}>You found a really cute puppy</Text>
+        {/* <Text style={style.input}>You found a really cute puppy</Text>
         <Text style={style.input}>He need a name and Care..</Text>
         <Text style={style.input}>
           First type the name and press "save" to take care of it
-        </Text>
+        </Text> */}
         <TextInput
           style={style.input}
           placeholder="TYPE NAME HERE"

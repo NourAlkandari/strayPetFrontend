@@ -9,9 +9,12 @@
   "dependencies": {
     "@expo/vector-icons": "^10.0.1",
     "expo": "^32.0.0",
+    "lottie-react-native": "^2.6.1",
     "native-base": "^2.12.1",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-speech-bubble": "^0.4.1",
+    "react-native-typewriter": "^0.6.1",
     "react-navigation": "^3.8.1"
   },
   "devDependencies": {

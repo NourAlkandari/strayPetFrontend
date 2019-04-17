@@ -1,13 +1,18 @@
 import React from "react";
 import { StyleSheet, ImageBackground } from "react-native";
+import Animation from "./Animation";
 
 class PetRoom extends React.Component {
   render() {
     return (
-      <ImageBackground
-        source={require("../assets/petbackground.png")}
-        style={styles.stylee}
-      />
+      <>
+        <ImageBackground
+          source={require("../assets/petbackground.png")}
+          style={styles.stylee}
+        >
+          <Animation />
+        </ImageBackground>
+      </>
     );
   }
 }
