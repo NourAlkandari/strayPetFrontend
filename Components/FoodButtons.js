@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Image, View, TouchableOpacity } from "react-native";
-import observer from "mobx-react";
+
 import PetStore from "../Store/PetStore";
 
 class FoodButtons extends Component {
@@ -20,8 +20,7 @@ class FoodButtons extends Component {
   }
 }
 
-export default observer(FoodButtons);
-
+export default FoodButtons;
 const styles = StyleSheet.create({
   menuItem: {
     width: "33.333333%",

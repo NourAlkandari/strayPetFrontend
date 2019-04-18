@@ -11,7 +11,7 @@ class SplashScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <StatusBar barStyle="light-content" backgroundColor="#4F6D7A" />
+        <StatusBar barStyle="light-content" backgroundColor="#4F6D7A" />
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>hello</Text>
 
@@ -20,7 +20,7 @@ class SplashScreen extends Component {
           title="Enter"
           backgroundStyle={styles.buttonBackground}
           textStyle={styles.buttonText}
-        /> */}
+        />
       </View>
     );
   }

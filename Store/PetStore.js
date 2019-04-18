@@ -8,7 +8,7 @@ class PetStore {
 
   fetch = async () => {
     try {
-      let res = await axios.get("http://127.0.0.1:8000/api/pet");
+      let res = await axios.get("http://127.0.0.1:8000/api/pet/");
       let petState = res.data;
       this.petState = petState;
       this.loading = false;
@@ -24,7 +24,7 @@ class PetStore {
       let Item = {
         food: foodItem
       };
-      await axios.post("http://127.0.0.1:8000/api/pet/feed", Item);
+      await axios.post("http://127.0.0.1:8000/api/pet/feed/", Item);
     } catch (err) {
       console.error(err);
     }
