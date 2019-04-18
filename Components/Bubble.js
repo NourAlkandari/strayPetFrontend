@@ -5,7 +5,7 @@ import Button from "./button";
 
 class SplashScreen extends Component {
   handlePress = () => {
-    this.props.navigation.navigate("PetRoom");
+    this.props.navigation.navigate("Login");
   };
 
   render() {

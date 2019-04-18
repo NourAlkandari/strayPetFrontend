@@ -5,14 +5,14 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 import Home from "../Components/Home";
 import PetRoom from "../Components/PetRoom";
 import SplashScreen from "../Components/Bubble";
-// import Login from "../Components/Login";
+import Login from "../Components/Login";
 
 const StackNav = createStackNavigator(
   {
     SplashScreen: SplashScreen,
     Home: Home,
-    PetRoom: PetRoom
-    // Login: Login
+    PetRoom: PetRoom,
+    Login: Login
   },
   {
     initialRouteName: "SplashScreen",
