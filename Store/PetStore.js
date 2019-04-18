@@ -35,5 +35,5 @@ decorate(PetStore, {
   loading: observable
 });
 let petStore = new PetStore();
-petStore.fetch();
-export default PetStore;
+
+export default petStore;
