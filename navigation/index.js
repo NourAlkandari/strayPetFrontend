@@ -4,22 +4,26 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 // Components
 import Home from "../Components/Home";
 import PetRoom from "../Components/PetRoom";
+import SplashScreen from "../Components/Bubble";
+import Login from "../Components/Login";
 
 const StackNav = createStackNavigator(
   {
+    SplashScreen: SplashScreen,
     Home: Home,
-    PetRoom: PetRoom
+    PetRoom: PetRoom,
+    Login: Login
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "SplashScreen",
     defaultNavigationOptions: {
-      headerTintColor: "white",
+      headerTintColor: "black",
       headerStyle: {
         backgroundColor: "#ffeaea"
-      },
-      headerTextStyle: {
-        fontWeight: "bold"
       }
+      // headerTitleStyle: {
+      //   fontWeight: "bold"
+      // }
     },
     cardStyle: {
       backgroundColor: "#ffeaea"
