@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, StatusBar } from "react-native";
+import { StyleSheet, Text, View, StatusBar, Image } from "react-native";
 
 import Button from "./button";
 
@@ -11,6 +11,7 @@ class SplashScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image source={require("../assets/Puppy.gif")} />
         <StatusBar barStyle="light-content" backgroundColor="#4F6D7A" />
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>hello</Text>
