@@ -1,14 +1,27 @@
 import React, { Component } from "react";
-import { StyleSheet, ImageBackground, View } from "react-native";
+import { StyleSheet, ImageBackground, View, Image } from "react-native";
 import FoodButtons from "./FoodButtons";
+import LogoutButton from "./LogoutButton";
+import { Constants } from "expo";
+import authStore from "../Store/authStore";
 
 class PetRoom extends Component {
-  // static navigationOptions = { header: null };
+  static navigationOptions = {
+    headerRight: <LogoutButton />,
+    headerLeft: null
+  };
+
+  // choose =()=>{
+
+  // }
 
   render() {
+    if (!authStore.user) {
+      this.props.navigation.replace("Login");
+    }
     return (
       <ImageBackground
-        source={require("../assets/backgroundnew.png")}
+        source={require("../assets/backy.png")}
         style={styles.stylee}
       >
         <View style={styles.overlayContainer}>
@@ -17,13 +30,14 @@ class PetRoom extends Component {
               itemImage={require("../assets/choco.png")}
               foodtype={"Chocolate"}
             />
-            {/* <FoodButtons itemImage={require("../assets/meat.png")} foodtype={""}/>
-            <FoodButtons itemImage={require("../assets/water.png")} foodtype={}/>
-            <FoodButtons itemImage={require("../assets/toy3.png")} foodtype={}/>
+            <FoodButtons itemImage={require("../assets/meat.png")} />
+            <FoodButtons itemImage={require("../assets/water.png")} />
+            {/* <FoodButtons itemImage={require("../assets/toy3.png")} foodtype={}/>
             <FoodButtons itemImage={require("../assets/toy1.png")} foodtype={}/>
             <FoodButtons itemImage={require("../assets/toy2.png")} foodtype={}/> */}
           </View>
         </View>
+        <Image source={require("../assets/giphy.gif")} />
       </ImageBackground>
     );
   }

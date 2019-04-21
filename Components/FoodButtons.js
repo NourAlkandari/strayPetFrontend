@@ -24,13 +24,13 @@ export default FoodButtons;
 const styles = StyleSheet.create({
   menuItem: {
     width: "33.333333%",
-    height: "50%",
+    height: "60%",
     padding: 20
   },
 
   image: {
     width: "100%",
-    height: "50%",
+    height: "100%",
     opacity: 0.8,
     borderColor: "#fff",
     borderWidth: 3
