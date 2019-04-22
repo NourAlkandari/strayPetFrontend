@@ -40,7 +40,7 @@ class Login extends Component {
 
   render() {
     // if (authStore.user) {
-    //   this.props.navigation.navigate("PetRoom");
+    //   this.props.navigation.replace("PetRoom");
     // }
     return (
       // <>

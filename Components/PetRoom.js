@@ -1,9 +1,16 @@
 import React, { Component } from "react";
-import { StyleSheet, ImageBackground, View, Image } from "react-native";
-import FoodButtons from "./FoodButtons";
-import LogoutButton from "./LogoutButton";
-import { Constants } from "expo";
+
+//react native and base
+import { StyleSheet, ImageBackground, Image, View } from "react-native";
+import TypeWriter from "react-native-typewriter";
+
+//Stores
 import authStore from "../Store/authStore";
+
+//Components
+import LogoutButton from "./LogoutButton";
+import Collapser from "./Collapser";
+import Collapser2 from "./Collapser2";
 
 class PetRoom extends Component {
   static navigationOptions = {
@@ -11,34 +18,38 @@ class PetRoom extends Component {
     headerLeft: null
   };
 
-  // choose =()=>{
-
-  // }
-
   render() {
     if (!authStore.user) {
       this.props.navigation.replace("Login");
     }
     return (
-      <ImageBackground
-        source={require("../assets/backy.png")}
-        style={styles.stylee}
-      >
-        <View style={styles.overlayContainer}>
-          <View style={styles.menuContainer}>
-            <FoodButtons
-              itemImage={require("../assets/choco.png")}
-              foodtype={"Chocolate"}
-            />
-            <FoodButtons itemImage={require("../assets/meat.png")} />
-            <FoodButtons itemImage={require("../assets/water.png")} />
-            {/* <FoodButtons itemImage={require("../assets/toy3.png")} foodtype={}/>
-            <FoodButtons itemImage={require("../assets/toy1.png")} foodtype={}/>
-            <FoodButtons itemImage={require("../assets/toy2.png")} foodtype={}/> */}
+      <>
+        <ImageBackground
+          source={require("../assets/backy.png")}
+          style={styles.stylee}
+        >
+          <TypeWriter
+            // typing={1}
+            style={{ fontSize: 30, fontFamily: "Noteworthy-Bold" }}
+            // onTypingEnd={this.props.onTypingEnd}
+
+            typing={1}
+            maxDelay={50}
+            onTyped={this.props.onTyped}
+            onTypingEnd={this.props.onTypingEnd}
+          >
+            trying the typewriter
+          </TypeWriter>
+          <View style={styles.container3}>
+            <View style={styles.iconRow}>
+              <Collapser />
+              <Collapser2 />
+            </View>
           </View>
-        </View>
-        <Image source={require("../assets/giphy.gif")} />
-      </ImageBackground>
+
+          <Image source={require("../assets/giphy.gif")} />
+        </ImageBackground>
+      </>
     );
   }
 }
@@ -51,6 +62,7 @@ const styles = StyleSheet.create({
   },
   overlayContainer: {
     flex: 1
+
     // backgroundColor: "rgba(255, 234, 234, 0.4)"
   },
 
@@ -59,5 +71,18 @@ const styles = StyleSheet.create({
 
     flexDirection: "row",
     flexWrap: "wrap"
+  },
+  container3: {
+    flex: 3,
+    flexDirection: "column",
+    padding: 5,
+    paddingTop: 20
+  },
+  iconRow: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    padding: 20
   }
 });

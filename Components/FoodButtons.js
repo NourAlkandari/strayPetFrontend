@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, Image, View, TouchableOpacity } from "react-native";
 
 import PetStore from "../Store/PetStore";
+import { Thumbnail } from "native-base";
 
 class FoodButtons extends Component {
   handlepress = () => {
@@ -12,7 +13,7 @@ class FoodButtons extends Component {
       <>
         <View style={styles.menuItem}>
           <TouchableOpacity onPress={this.handlepress}>
-            <Image source={this.props.itemImage} style={styles.image} />
+            <Thumbnail source={this.props.itemImage} style={styles.image} />
           </TouchableOpacity>
         </View>
       </>
@@ -23,16 +24,17 @@ class FoodButtons extends Component {
 export default FoodButtons;
 const styles = StyleSheet.create({
   menuItem: {
-    width: "33.333333%",
-    height: "60%",
+    // width: "40%",
+    // height: "60%",
+
     padding: 20
   },
 
   image: {
-    width: "100%",
-    height: "100%",
+    // width: "100%",
+    // height: "100%",
     opacity: 0.8,
-    borderColor: "#fff",
-    borderWidth: 3
+    borderColor: "#fff"
+    // borderWidth: 3
   }
 });
