@@ -2,10 +2,15 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, StatusBar, Image } from "react-native";
 
 import Button from "./button";
+import authStore from "../Store/authStore";
 
 class SplashScreen extends Component {
   handlePress = () => {
-    this.props.navigation.navigate("Login");
+    if (!authStore.user) {
+      this.props.navigation.navigate("Login");
+    } else {
+      this.props.navigation.replace("PetRoom");
+    }
   };
 
   render() {

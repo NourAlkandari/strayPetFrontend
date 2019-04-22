@@ -52,7 +52,7 @@ class AuthStore {
     try {
       await axios.post("http://127.0.0.1:8000/api/register/", userData);
       this.loginUser(userData, navigation);
-      navigation.navigate("PetRoom");
+      // navigation.navigate("PetRoom");
     } catch (error) {
       console.log(error);
     }
