@@ -47,23 +47,17 @@ class PetStore {
   needsDecay = async x => {
     try {
       // let res = await axios.post(`http://127.0.0.1:8000/api/pet/${pet.state}`);
-      let res = await axios.push("http://127.0.0.1:8000/api/pet/", x);
+      let res = await axios.put("http://127.0.0.1:8000/api/pet/", x);
       const currentDate = Date.now() / 1000;
       this.petState = this.petState - currentDate;
     } catch (err) {
       console.error(err);
     }
   };
-
-  get quantity() {
-    let pet = this.fetch();
-    return pet.state.hunger;
-  }
 }
 decorate(PetStore, {
   petState: observable,
-  loading: observable,
-  quantity: computed
+  loading: observable
 });
 let petStore = new PetStore();
 

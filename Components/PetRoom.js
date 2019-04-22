@@ -1,17 +1,18 @@
 import React, { Component } from "react";
-
+import { observer } from "mobx-react";
 //react native and base
-import { StyleSheet, ImageBackground, Image, View } from "react-native";
+import { StyleSheet, ImageBackground, Image, View, Text } from "react-native";
 import TypeWriter from "react-native-typewriter";
 
 //Stores
 import authStore from "../Store/authStore";
+import petStore from "../Store/PetStore";
 
 //Components
 import LogoutButton from "./LogoutButton";
 import Collapser from "./Collapser";
 import Collapser2 from "./Collapser2";
-import petStore from "../Store/PetStore";
+import { Spinner } from "native-base";
 
 class PetRoom extends Component {
   static navigationOptions = {
@@ -19,13 +20,20 @@ class PetRoom extends Component {
     headerLeft: null
   };
 
+  componentDidMount() {
+    petStore.fetch();
+  }
+
   render() {
     if (!authStore.user) {
       this.props.navigation.replace("Login");
     }
+    if (petStore.loading) {
+      return <Spinner />;
+    }
     return (
       <>
-        {petStore.quantity}
+        <Text>{petStore.petState.state.hunger}</Text>
         <ImageBackground
           source={require("../assets/backy.png")}
           style={styles.stylee}
@@ -55,7 +63,8 @@ class PetRoom extends Component {
     );
   }
 }
-export default PetRoom;
+export default observer(PetRoom);
+
 const styles = StyleSheet.create({
   stylee: {
     flex: 1,
