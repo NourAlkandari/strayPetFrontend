@@ -39,9 +39,9 @@ class Login extends Component {
   };
 
   render() {
-    if (authStore.user) {
-      this.props.navigation.navigate("PetRoom");
-    }
+    // if (authStore.user) {
+    //   this.props.navigation.replace("PetRoom");
+    // }
     return (
       // <>
       //   <Image source={{ uri: oneofone }} />

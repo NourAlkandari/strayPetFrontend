@@ -20,6 +20,15 @@ class AuthStore {
       console.log(error);
     }
   };
+  registerUser = async (userData, navigation) => {
+    try {
+      await axios.post("http://127.0.0.1:8000/api/register/", userData);
+
+      this.loginUser(userData, navigation);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   setUser = async token => {
     if (token) {
@@ -45,16 +54,6 @@ class AuthStore {
       } else {
         this.setUser();
       }
-    }
-  };
-
-  registerUser = async (userData, navigation) => {
-    try {
-      await axios.post("http://127.0.0.1:8000/api/register/", userData);
-      this.loginUser(userData, navigation);
-      navigation.navigate("PetRoom");
-    } catch (error) {
-      console.log(error);
     }
   };
 

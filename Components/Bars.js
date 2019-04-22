@@ -1,93 +1,120 @@
-import React, { Component } from "react";
-import { TouchableOpacity, Modal, View, Text, Dimensions } from "react-native";
-// import ProgressBarAnimated from "react-native-progress-bar-animated";
-import { LinearGradient } from "expo";
+// import React, { Component } from "react";
+// import {
+//   TouchableOpacity,
+//   Modal,
+//   View,
+//   Text,
+//   Dimensions,
+//   StyleSheet
+// } from "react-native";
+// // import ProgressBarAnimated from "react-native-progress-bar-animated";
+// // import { LinearGradient } from "expo";
+// import FoodButtons from "./FoodButtons";
+// import CareIcon from "./icon";
 
-import style from "./styles";
+// class Bars extends Component {
+//   state = {
+//     foodButtons: false,
+//     playButtons: false
+//   };
 
-import CareIcon from "../icon";
+//   handleFeed = () => {
+//     const newValue = !this.state.foodButtons;
+//     this.setState({ foodButtons: newValue });
+//   };
+//   handlePlay = () => {
+//     const newValue = !this.state.playButtons;
+//     this.setState({ playButtons: newValue });
+//   };
+//   foodView = () => {
+//     if (this.state.foodButtons) {
+//       return (
+//         <View style={styles.overlayContainer}>
+//           <View style={styles.menuContainer}>
+//             <FoodButtons
+//               itemImage={require("../assets/choco.png")}
+//               foodtype={"Chocolate"}
+//             />
+//             <FoodButtons itemImage={require("../assets/meat.png")} />
+//             <FoodButtons itemImage={require("../assets/water.png")} />
+//           </View>
+//         </View>
+//       );
+//     } else {
+//       return (
+//         <TouchableOpacity onPress={this.handleFeed}>
+//           <CareIcon name="cutlery" type="font-awesome" />
+//         </TouchableOpacity>
+//       );
+//     }
+//   };
+//   playView = () => {
+//     if (this.state.playButtons) {
+//       return (
+//         <View style={styles.overlayContainer}>
+//           <View style={styles.menuContainer}>
+//             <FoodButtons itemImage={require("../assets/toy3.png")} />
+//             <FoodButtons itemImage={require("../assets/toy1.png")} />
+//             <FoodButtons itemImage={require("../assets/toy2.png")} />
+//           </View>
+//         </View>
+//       );
+//     } else {
+//       return (
+//         <TouchableOpacity onPress={this.handlePlay}>
+//           <CareIcon name="soccer-ball-o" type="font-awesome" />
+//         </TouchableOpacity>
+//       );
+//     }
+//   };
+//   onPressPlay = () => {
+//     return (
+//       <View style={styles.overlayContainer}>
+//         <View style={styles.menuContainer} />
+//       </View>
+//     );
+//   };
+//   render() {
+//     // const barWidth = Dimensions.get("screen").width / 2 - 30;
+//     // const progressCustomStyle = {
+//     //   backgroundColor: colors.white,
+//     //   borderRadius: 10,
+//     //   borderColor: colors.white
+//     // };
 
-class Bars extends Component {
-  render() {
-    // const barWidth = Dimensions.get("screen").width / 2 - 30;
-    // const progressCustomStyle = {
-    //   backgroundColor: colors.white,
-    //   borderRadius: 10,
-    //   borderColor: colors.white
-    // };
+//     return (
+//       <>
+//         {this.foodView()}
+//         {this.playView()}
+//       </>
+//     );
+//   }
+// }
 
-    return (
-      <View style={{ flex: 1 }}>
-        <LinearGradient
-          style={{
-            position: "absolute",
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0
-          }}
-        />
+// export default Bars;
+// const styles = StyleSheet.create({
+//   container3: {
+//     flex: 3,
+//     flexDirection: "column",
+//     padding: 5,
+//     paddingTop: 20
+//   },
+//   iconRow: {
+//     flex: 1,
+//     flexDirection: "row",
+//     justifyContent: "space-evenly",
+//     alignItems: "center",
+//     padding: 20
+//   },
+//   overlayContainer: {
+//     flex: 1
+//     // backgroundColor: "rgba(255, 234, 234, 0.4)"
+//   },
 
-        {/* Progress bar container1 starts */}
-        {/* <View style={style.container}> */}
+//   menuContainer: {
+//     height: "50%",
 
-        {/* Row 2 */}
-        {/* <View style={style.row}>
-            <View style={style.column}>
-              <Text style={style.actionLabel}>Fitness</Text>
-              <ProgressBarAnimated
-                {...progressCustomStyle}
-                width={barWidth}
-                value={this.props.dinosaur.fitness}
-              />
-            </View>
-            <View style={style.column}>
-              <Text style={style.actionLabel}>Energy</Text>
-              <ProgressBarAnimated
-                {...progressCustomStyle}
-                width={barWidth}
-                value={this.props.dinosaur.energy}
-              />
-            </View>
-          </View>
-
-         
-        </View> */}
-
-        {/* Icon container3 starts */}
-        <View style={style.container3}>
-          {/* Row 1 */}
-          <View style={style.iconRow}>
-            <CareIcon
-              name="cutlery"
-              type="font-awesome"
-              onPress={() => this.props.onPress("feed")}
-            />
-            <CareIcon
-              name="soccer-ball-o"
-              type="font-awesome"
-              onPress={() => this.props.onPress("play")}
-            />
-          </View>
-        </View>
-      </View>
-    );
-  }
-}
-
-export default Bars;
-const style = StyleSheet.create({
-  container3: {
-    flex: 3,
-    flexDirection: "column",
-    padding: 5,
-    paddingTop: 20
-  },
-  iconRow: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    padding: 20
-  }
-});
+//     flexDirection: "row",
+//     flexWrap: "wrap"
+//   }
+// });
