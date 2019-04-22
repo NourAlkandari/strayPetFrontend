@@ -44,9 +44,18 @@ class Collapser extends Component {
             <Text style={{ fontFamily: "Noteworthy-Bold" }}>Play with me</Text>
           </CollapseHeader>
           <CollapseBody>
-            <FoodButtons itemImage={require("../assets/toy3.png")} />
-            <FoodButtons itemImage={require("../assets/toy1.png")} />
-            <FoodButtons itemImage={require("../assets/toy2.png")} />
+            <FoodButtons
+              itemImage={require("../assets/toy3.png")}
+              entertainmenttype={"Walk Pet"}
+            />
+            <FoodButtons
+              itemImage={require("../assets/toy1.png")}
+              entertainmenttype={"Ignore"}
+            />
+            <FoodButtons
+              itemImage={require("../assets/toy2.png")}
+              entertainmenttype={"Go to Petstore"}
+            />
           </CollapseBody>
         </Collapse>
       </View>

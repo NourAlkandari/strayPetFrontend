@@ -1,4 +1,4 @@
-import { decorate, observable } from "mobx";
+import { decorate, observable, computed } from "mobx";
 import axios from "axios";
 import authStore from "./authStore";
 
@@ -54,10 +54,16 @@ class PetStore {
       console.error(err);
     }
   };
+
+  get quantity() {
+    let pet = this.fetch();
+    return pet.state.hunger;
+  }
 }
 decorate(PetStore, {
   petState: observable,
-  loading: observable
+  loading: observable,
+  quantity: computed
 });
 let petStore = new PetStore();
 

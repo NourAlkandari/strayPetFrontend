@@ -13,6 +13,10 @@ class Home extends Component {
     });
   };
 
+  handlepress = () => {
+    PetStore.nameDog(this.props.nametype);
+  };
+
   render() {
     return (
       <View style={style.view}>

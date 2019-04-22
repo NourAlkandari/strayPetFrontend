@@ -11,6 +11,7 @@ import authStore from "../Store/authStore";
 import LogoutButton from "./LogoutButton";
 import Collapser from "./Collapser";
 import Collapser2 from "./Collapser2";
+import petStore from "../Store/PetStore";
 
 class PetRoom extends Component {
   static navigationOptions = {
@@ -24,6 +25,7 @@ class PetRoom extends Component {
     }
     return (
       <>
+        {petStore.quantity}
         <ImageBackground
           source={require("../assets/backy.png")}
           style={styles.stylee}
