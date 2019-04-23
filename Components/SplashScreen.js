@@ -5,7 +5,6 @@ import TypeWriter from "react-native-typewriter";
 
 //Components
 import Button from "./button";
-import authStore from "../Store/authStore";
 
 //Stores
 import authStore from "../Store/authStore";

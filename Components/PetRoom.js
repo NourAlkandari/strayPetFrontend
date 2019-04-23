@@ -1,27 +1,36 @@
 import React, { Component } from "react";
+
 import {
   StyleSheet,
   ImageBackground,
   View,
   Image,
-  ActivityIndicator
+  ActivityIndicator,
+  Image
 } from "react-native";
 import FoodButtons from "./FoodButtons";
 import LogoutButton from "./LogoutButton";
 import { Constants } from "expo";
+
+//react native and base
+
 import TypeWriter from "react-native-typewriter";
 
 //Stores
 
 import authStore from "../Store/authStore";
+
 import Bars from "./Bars";
 import petStore from "../Store/PetStore";
 import { observer } from "mobx-react";
+
+
 
 //Components
 
 import Collapser from "./Collapser";
 import Collapser2 from "./Collapser2";
+import { Spinner } from "native-base";
 
 class PetRoom extends Component {
   static navigationOptions = {
@@ -32,15 +41,22 @@ class PetRoom extends Component {
     petStore.fetch();
   }
 
+
   render() {
     if (!authStore.user) {
       this.props.navigation.replace("Login");
     }
-    if (!petStore.petState) {
-      return <ActivityIndicator size="small" color="#00ff00" />;
+
+//     if (!petStore.petState) {
+//       return <ActivityIndicator size="small" color="#00ff00" />;
+
+    if (petStore.loading) {
+      return <Spinner />;
+
     }
     return (
       <>
+        <Text>{petStore.petState.state.hunger}</Text>
         <ImageBackground
           source={require("../assets/backy.png")}
           style={styles.stylee}
@@ -79,6 +95,7 @@ class PetRoom extends Component {
   }
 }
 export default observer(PetRoom);
+
 const styles = StyleSheet.create({
   stylee: {
     flex: 1,
