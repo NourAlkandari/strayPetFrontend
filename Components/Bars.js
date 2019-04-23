@@ -1,3 +1,4 @@
+
 import React from "react";
 import { View, StyleSheet, Dimensions, Button, Text } from "react-native";
 
@@ -65,3 +66,6 @@ const styles = StyleSheet.create({
     marginBottom: 0
   }
 });
+
+
+

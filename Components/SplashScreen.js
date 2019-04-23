@@ -1,27 +1,45 @@
+//react
 import React, { Component } from "react";
 import { StyleSheet, Text, View, StatusBar, Image } from "react-native";
+import TypeWriter from "react-native-typewriter";
 
+//Components
 import Button from "./button";
+import authStore from "../Store/authStore";
+
+//Stores
+import authStore from "../Store/authStore";
 
 class SplashScreen extends Component {
+  static navigationOptions = {
+    header: null
+  };
   handlePress = () => {
-    this.props.navigation.navigate("Login");
+    if (!authStore.user) {
+      this.props.navigation.navigate("Login");
+    } else {
+      this.props.navigation.replace("PetRoom");
+    }
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <Image source={require("../assets/Puppy.gif")} />
+        <TypeWriter typing={1} style={styles.welcome}>
+          Welcome to Stray Dog Game!
+        </TypeWriter>
+        {/* <Image
+          source={require("../assets/Puppy.gif")}
+        /> */}
         <StatusBar barStyle="light-content" backgroundColor="#4F6D7A" />
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>hello</Text>
 
         <Button
           onPress={this.handlePress}
-          title="Enter"
+          title="Play"
           backgroundStyle={styles.buttonBackground}
           textStyle={styles.buttonText}
         />
+        <Image source={require("../assets/giphy.gif")} />
       </View>
     );
   }
@@ -35,9 +53,10 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   welcome: {
-    fontSize: 20,
+    fontFamily: "Noteworthy-Bold",
+    fontSize: 30,
     textAlign: "center",
-    margin: 10,
+    margin: 50,
     color: "black"
   },
   instructions: {
@@ -52,6 +71,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "black",
-    fontSize: 30
+    fontSize: 30,
+    fontFamily: "Noteworthy-Bold"
   }
 });
