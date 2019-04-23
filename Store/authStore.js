@@ -20,6 +20,7 @@ class AuthStore {
       console.log(error);
     }
   };
+
   registerUser = async (userData, navigation) => {
     try {
       await axios.post("http://127.0.0.1:8000/api/register/", userData);
@@ -51,6 +52,7 @@ class AuthStore {
       const user = jwt_decode(token);
       if (user.exp >= currentDate) {
         this.setUser(token);
+        console.log("Im not expired!!");
       } else {
         this.setUser();
       }

@@ -13,6 +13,11 @@ class SplashScreen extends Component {
   static navigationOptions = {
     header: null
   };
+
+  componentDidMount() {
+    authStore.checkForUser();
+  }
+
   handlePress = () => {
     if (!authStore.user) {
       this.props.navigation.navigate("Login");

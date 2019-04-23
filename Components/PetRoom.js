@@ -1,62 +1,52 @@
-import React, { Component } from "react";
-
-import {
-  StyleSheet,
-  ImageBackground,
-  View,
-  Image,
-  ActivityIndicator,
-  Image
-} from "react-native";
-import FoodButtons from "./FoodButtons";
-import LogoutButton from "./LogoutButton";
-import { Constants } from "expo";
-
 //react native and base
 
-import TypeWriter from "react-native-typewriter";
-
-//Stores
-
-import authStore from "../Store/authStore";
-
-import Bars from "./Bars";
-import petStore from "../Store/PetStore";
+import React, { Component } from "react";
+import { StyleSheet, ImageBackground, View, Image } from "react-native";
 import { observer } from "mobx-react";
-
-
+import { Spinner, Text } from "native-base";
+import TypeWriter from "react-native-typewriter";
 
 //Components
 
 import Collapser from "./Collapser";
 import Collapser2 from "./Collapser2";
-import { Spinner } from "native-base";
+import LogoutButton from "./LogoutButton";
+import Bars from "./Bars";
+
+//Stores
+
+import authStore from "../Store/authStore";
+import petStore from "../Store/PetStore";
 
 class PetRoom extends Component {
   static navigationOptions = {
     headerRight: <LogoutButton />,
     headerLeft: null
   };
+
   componentDidMount() {
     petStore.fetch();
   }
 
-
   render() {
+    console.log("CHECK CHECK", authStore.user);
     if (!authStore.user) {
       this.props.navigation.replace("Login");
     }
 
-//     if (!petStore.petState) {
-//       return <ActivityIndicator size="small" color="#00ff00" />;
+    // if (!petStore.petState) {
+    //   return <ActivityIndicator size="small" color="#00ff00" />;
+    // }
 
     if (petStore.loading) {
       return <Spinner />;
-
     }
+
     return (
       <>
         <Text>{petStore.petState.state.hunger}</Text>
+        <Text>{petStore.petState.state.fun}</Text>
+
         <ImageBackground
           source={require("../assets/backy.png")}
           style={styles.stylee}
@@ -73,24 +63,19 @@ class PetRoom extends Component {
           >
             trying the typewriter
           </TypeWriter>
+
           <View style={styles.container3}>
             <View style={styles.iconRow}>
               <Collapser />
               <Collapser2 />
             </View>
           </View>
-
-        </View>
-        <Bars states={petStore.petState.state.hunger} name="Hunger" />
-        <Bars states={petStore.petState.state.bladder} name="Bladder" />
-        <Bars states={petStore.petState.state.fun} name="Fun" />
-        <Image source={require("../assets/giphy.gif")} />
-                           <Image source={require("../assets/giphy.gif")} />
-      </ImageBackground>
-
-
-      
-
+          <Image source={require("../assets/giphy.gif")} />
+          <Bars states={petStore.petState.state.hunger} name="Hunger" />
+          <Bars states={petStore.petState.state.bladder} name="Bladder" />
+          <Bars states={petStore.petState.state.fun} name="Fun" />
+        </ImageBackground>
+      </>
     );
   }
 }

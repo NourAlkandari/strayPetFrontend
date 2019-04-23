@@ -1,6 +1,5 @@
-
 import React from "react";
-import { View, StyleSheet, Dimensions, Button, Text } from "react-native";
+import { View, StyleSheet, Dimensions, Text } from "react-native";
 
 import ProgressBarAnimated from "react-native-progress-bar-animated";
 import petStore from "../Store/PetStore";
@@ -20,11 +19,11 @@ export default class Bars extends React.Component {
 
   render() {
     const barWidth = Dimensions.get("screen").width - 200;
-    const progressCustomStyles = {
-      backgroundColor: "red",
-      borderRadius: 0,
-      borderColor: "orange"
-    };
+    // const progressCustomStyles = {
+    //   backgroundColor: "red",
+    //   borderRadius: 0,
+    //   borderColor: "orange"
+    // };
 
     return (
       <View style={styles.container}>
@@ -66,6 +65,3 @@ const styles = StyleSheet.create({
     marginBottom: 0
   }
 });
-
-
-

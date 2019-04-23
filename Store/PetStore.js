@@ -13,10 +13,9 @@ class PetStore {
       let res = await axios.get("http://127.0.0.1:8000/api/pet/");
       let petState = res.data;
       this.petState = petState;
-      console.log("PET STATE", this.petState);
       this.loading = false;
     } catch (err) {
-      console.error(err);
+      console.log("Erro in fetching the states", err);
     }
   };
   //  from the button pass as string, put in dict and pass to backend
