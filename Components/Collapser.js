@@ -49,9 +49,15 @@ class Collapser extends Component {
               foodtype={"Chocolate"}
             />
 
-            <FoodButtons itemImage={require("../assets/meat.png")} />
+            <FoodButtons
+              itemImage={require("../assets/meat.png")}
+              foodtype={"Dog Food"}
+            />
 
-            <FoodButtons itemImage={require("../assets/water.png")} />
+            <FoodButtons
+              itemImage={require("../assets/water.png")}
+              foodtype={"Today's Lunch"}
+            />
           </CollapseBody>
         </Collapse>
       </View>

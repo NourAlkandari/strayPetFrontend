@@ -1,4 +1,4 @@
-import { decorate, observable } from "mobx";
+import { decorate, observable, computed } from "mobx";
 import axios from "axios";
 import authStore from "./authStore";
 
@@ -47,7 +47,7 @@ class PetStore {
   needsDecay = async x => {
     try {
       // let res = await axios.post(`http://127.0.0.1:8000/api/pet/${pet.state}`);
-      let res = await axios.push("http://127.0.0.1:8000/api/pet/", x);
+      let res = await axios.put("http://127.0.0.1:8000/api/pet/", x);
       const currentDate = Date.now() / 1000;
       this.petState = this.petState - currentDate;
     } catch (err) {
