@@ -1,15 +1,33 @@
 import React, { Component } from "react";
-import { observer } from "mobx-react";
+
+import {
+  StyleSheet,
+  ImageBackground,
+  View,
+  Image,
+  ActivityIndicator,
+  Image
+} from "react-native";
+import FoodButtons from "./FoodButtons";
+import LogoutButton from "./LogoutButton";
+import { Constants } from "expo";
+
 //react native and base
-import { StyleSheet, ImageBackground, Image, View, Text } from "react-native";
+
 import TypeWriter from "react-native-typewriter";
 
 //Stores
+
 import authStore from "../Store/authStore";
+
+import Bars from "./Bars";
 import petStore from "../Store/PetStore";
+import { observer } from "mobx-react";
+
+
 
 //Components
-import LogoutButton from "./LogoutButton";
+
 import Collapser from "./Collapser";
 import Collapser2 from "./Collapser2";
 import { Spinner } from "native-base";
@@ -19,17 +37,22 @@ class PetRoom extends Component {
     headerRight: <LogoutButton />,
     headerLeft: null
   };
-
   componentDidMount() {
     petStore.fetch();
   }
+
 
   render() {
     if (!authStore.user) {
       this.props.navigation.replace("Login");
     }
+
+//     if (!petStore.petState) {
+//       return <ActivityIndicator size="small" color="#00ff00" />;
+
     if (petStore.loading) {
       return <Spinner />;
+
     }
     return (
       <>
@@ -57,9 +80,17 @@ class PetRoom extends Component {
             </View>
           </View>
 
-          <Image source={require("../assets/giphy.gif")} />
-        </ImageBackground>
-      </>
+        </View>
+        <Bars states={petStore.petState.state.hunger} name="Hunger" />
+        <Bars states={petStore.petState.state.bladder} name="Bladder" />
+        <Bars states={petStore.petState.state.fun} name="Fun" />
+        <Image source={require("../assets/giphy.gif")} />
+                           <Image source={require("../assets/giphy.gif")} />
+      </ImageBackground>
+
+
+      
+
     );
   }
 }
