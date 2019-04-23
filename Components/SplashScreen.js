@@ -43,7 +43,10 @@ class SplashScreen extends Component {
           backgroundStyle={styles.buttonBackground}
           textStyle={styles.buttonText}
         />
-        <Image source={require("../assets/giphy.gif")} />
+        <Image
+          source={require("../assets/test2.gif")}
+          style={{ width: "50%", height: "50%", backgroundColor: "rgba" }}
+        />
       </View>
     );
   }
