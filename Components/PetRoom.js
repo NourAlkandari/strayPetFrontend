@@ -1,15 +1,27 @@
 import React, { Component } from "react";
-import { StyleSheet, ImageBackground, View, Image } from "react-native";
+import {
+  StyleSheet,
+  ImageBackground,
+  View,
+  Image,
+  ActivityIndicator
+} from "react-native";
 import FoodButtons from "./FoodButtons";
 import LogoutButton from "./LogoutButton";
 import { Constants } from "expo";
 import authStore from "../Store/authStore";
+import Bars from "./Bars";
+import petStore from "../Store/PetStore";
+import { observer } from "mobx-react";
 
 class PetRoom extends Component {
   static navigationOptions = {
     headerRight: <LogoutButton />,
     headerLeft: null
   };
+  componentDidMount() {
+    petStore.fetch();
+  }
 
   // choose =()=>{
 
@@ -18,6 +30,9 @@ class PetRoom extends Component {
   render() {
     if (!authStore.user) {
       this.props.navigation.replace("Login");
+    }
+    if (!petStore.petState) {
+      return <ActivityIndicator size="small" color="#00ff00" />;
     }
     return (
       <ImageBackground
@@ -37,12 +52,15 @@ class PetRoom extends Component {
             <FoodButtons itemImage={require("../assets/toy2.png")} foodtype={}/> */}
           </View>
         </View>
+        <Bars states={petStore.petState.state.hunger} name="Hunger" />
+        <Bars states={petStore.petState.state.bladder} name="Bladder" />
+        <Bars states={petStore.petState.state.fun} name="Fun" />
         <Image source={require("../assets/giphy.gif")} />
       </ImageBackground>
     );
   }
 }
-export default PetRoom;
+export default observer(PetRoom);
 const styles = StyleSheet.create({
   stylee: {
     flex: 1,

@@ -19,6 +19,7 @@
     "react-lottie": "^1.2.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-linear-gradient": "^2.5.4",
+    "react-native-progress-bar-animated": "^1.0.6",
     "react-navigation": "^3.8.1"
   },
   "devDependencies": {
