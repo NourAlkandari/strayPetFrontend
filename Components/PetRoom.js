@@ -25,10 +25,6 @@ class PetRoom extends Component {
     petStore.fetch();
   }
 
-  goingHome = () => {
-    this.props.navigation.navigate("Message");
-  };
-
   render() {
     console.log("CHECK CHECK", authStore.user);
     if (!authStore.user) {
@@ -45,36 +41,22 @@ class PetRoom extends Component {
 
     return (
       <>
-        <Text>{petStore.petState.state.hunger}</Text>
-        <Text>{petStore.petState.state.fun}</Text>
-
         <ImageBackground
           source={require("../assets/backy.png")}
           style={styles.stylee}
         >
-          <TypeWriter
-            // typing={1}
-            style={{ fontSize: 30, fontFamily: "Noteworthy-Bold" }}
-            // onTypingEnd={this.props.onTypingEnd}
-
-            typing={1}
-            maxDelay={50}
-            onTyped={this.props.onTyped}
-            onTypingEnd={this.props.onTypingEnd}
-          >
-            trying the typewriter
-          </TypeWriter>
+          <FeedCollapser />
+          <FunCollapser />
 
           <View style={styles.container3}>
             <View style={styles.iconRow}>
-              <FeedCollapser />
-              <FunCollapser />
-              <Icon type="FontAwesome" name="home" onPress={this.goingHome} />
+              <Image
+                source={require("../assets/test2.gif")}
+                style={{ width: "80%", height: "80%" }}
+              />
             </View>
           </View>
-          <Image source={require("../assets/giphy.gif")} />
           <Bars states={petStore.petState.state.hunger} name="Hunger" />
-          <Bars states={petStore.petState.state.bladder} name="Bladder" />
           <Bars states={petStore.petState.state.fun} name="Fun" />
         </ImageBackground>
       </>

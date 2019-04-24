@@ -27,7 +27,9 @@ export default class Bars extends React.Component {
     return (
       <View style={styles.container}>
         <View>
-          <Text style={styles.label}>{this.props.name}</Text>
+          <Text style={styles.label}>
+            {this.props.name} {this.props.states}%
+          </Text>
           <ProgressBarAnimated
             width={barWidth}
             value={this.props.states}
