@@ -15,7 +15,7 @@ class AnimatedMsgs extends Component {
           duration="3000"
         >
           <View style={styles.textContainer}>
-            <TypeWriter style={styles.text} typing={1} maxDelay={100}>
+            <TypeWriter style={this.props.s} typing={1} maxDelay={100}>
               {this.props.msg}
             </TypeWriter>
           </View>

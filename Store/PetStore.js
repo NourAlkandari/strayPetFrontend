@@ -2,16 +2,16 @@ import { decorate, observable } from "mobx";
 import axios from "axios";
 
 class PetStore {
-  petState = null;
   loading = true;
+  pet = null;
 
   food = ["Chocolate", "Today's Lunch", "Dog Food"];
 
   fetch = async () => {
     try {
       let res = await axios.get("http://127.0.0.1:8000/api/pet/");
-      let petState = res.data;
-      this.petState = petState;
+      let pet = res.data;
+      this.pet = pet;
       this.loading = false;
     } catch (err) {
       console.log("Erro in fetching the states", err);
@@ -32,7 +32,10 @@ class PetStore {
   // };
   nameDog = async (Item, navigation) => {
     try {
-      await axios.post("http://127.0.0.1:8000/api/pet/name/", Item);
+      const res = await axios.post("http://127.0.0.1:8000/api/pet/name/", Item);
+      const data = res.data;
+      console.log("WHATS THE RESPONSE?", data);
+      this.pet = data;
       navigation.navigate("PetRoom");
     } catch (err) {
       console.error(err);
@@ -56,15 +59,16 @@ class PetStore {
       // let res = await axios.post(`http://127.0.0.1:8000/api/pet/${pet.state}`);
       let res = await axios.put("http://127.0.0.1:8000/api/pet/", x);
       const currentDate = Date.now() / 1000;
-      this.petState = this.petState - currentDate;
+      this.pet = this.pet - currentDate;
     } catch (err) {
       console.error(err);
     }
   };
 }
 decorate(PetStore, {
-  petState: observable,
-  loading: observable
+  pet: observable,
+  loading: observable,
+  pet: observable
 });
 let petStore = new PetStore();
 

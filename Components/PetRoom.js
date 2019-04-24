@@ -9,6 +9,7 @@ import FeedCollapser from "./FeedCollapser";
 import FunCollapser from "./FunCollapser";
 import LogoutButton from "./LogoutButton";
 import Bars from "./Bars";
+import AnimatedMsgs from "./AnimatedMsgs";
 
 //Stores
 import authStore from "../Store/authStore";
@@ -49,14 +50,20 @@ class PetRoom extends Component {
 
           <View style={styles.container3}>
             <View style={styles.iconRow}>
+              <AnimatedMsgs
+                msg={`Oh no! Looks like ${
+                  petStore.pet.name
+                }  \n Someone had abonded it ...\n Please take care of it.. \n but first give your puppy a name`}
+                s={{ fontSize: 10 }}
+              />
               <Image
                 source={require("../assets/test2.gif")}
                 style={{ width: "80%", height: "80%" }}
               />
             </View>
           </View>
-          <Bars states={petStore.petState.state.hunger} name="Hunger" />
-          <Bars states={petStore.petState.state.fun} name="Fun" />
+          <Bars states={petStore.pet.state.hunger} name="Hunger" />
+          <Bars states={petStore.pet.state.fun} name="Fun" />
         </ImageBackground>
       </>
     );
