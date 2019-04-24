@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-
 //react native and base
-import { View, TouchableOpacity, StyleSheet, Button, Text } from "react-native";
+import React, { Component } from "react";
+import { View, TouchableOpacity, Text } from "react-native";
 import { Icon } from "native-base";
 import {
   Collapse,
@@ -10,10 +9,9 @@ import {
 } from "accordion-collapse-react-native";
 
 //Components
-import FoodButtons from "./FoodButtons";
-import { bold } from "ansi-colors";
+import StateButtons from "./StateButtons";
 
-class Collapser extends Component {
+class FunCollapser extends Component {
   state = {
     collapsed: false //do not show the body by default
   };
@@ -44,15 +42,15 @@ class Collapser extends Component {
             <Text style={{ fontFamily: "Noteworthy-Bold" }}>Play with me</Text>
           </CollapseHeader>
           <CollapseBody>
-            <FoodButtons
+            <StateButtons
               itemImage={require("../assets/toy3.png")}
               entertainmenttype={"Walk Pet"}
             />
-            <FoodButtons
+            <StateButtons
               itemImage={require("../assets/toy1.png")}
               entertainmenttype={"Ignore"}
             />
-            <FoodButtons
+            <StateButtons
               itemImage={require("../assets/toy2.png")}
               entertainmenttype={"Go to Petstore"}
             />
@@ -63,30 +61,4 @@ class Collapser extends Component {
   }
 }
 
-export default Collapser;
-const styles = StyleSheet.create({
-  container3: {
-    flex: 3,
-    flexDirection: "column",
-    padding: 5,
-    paddingTop: 20
-  },
-  iconRow: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    padding: 20
-  },
-  overlayContainer: {
-    flex: 1
-    // backgroundColor: "rgba(255, 234, 234, 0.4)"
-  },
-
-  menuContainer: {
-    height: "50%",
-
-    flexDirection: "row",
-    flexWrap: "wrap"
-  }
-});
+export default FunCollapser;

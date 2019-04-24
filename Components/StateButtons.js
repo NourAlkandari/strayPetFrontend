@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { StyleSheet, Image, View, TouchableOpacity } from "react-native";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 
 import PetStore from "../Store/PetStore";
 import { Thumbnail } from "native-base";
 
-class FoodButtons extends Component {
+class StateButtons extends Component {
   handlepress = () => {
     PetStore.dogFeed(this.props.foodtype);
   };
@@ -21,7 +21,7 @@ class FoodButtons extends Component {
   }
 }
 
-export default FoodButtons;
+export default StateButtons;
 const styles = StyleSheet.create({
   menuItem: {
     // width: "40%",

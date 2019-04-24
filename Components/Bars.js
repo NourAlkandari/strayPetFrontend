@@ -1,8 +1,7 @@
+//React Libraries and native base
 import React from "react";
 import { View, StyleSheet, Dimensions, Text } from "react-native";
-
 import ProgressBarAnimated from "react-native-progress-bar-animated";
-import petStore from "../Store/PetStore";
 
 export default class Bars extends React.Component {
   state = {

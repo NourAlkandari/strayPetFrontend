@@ -21,12 +21,20 @@ class PetStore {
   //  from the button pass as string, put in dict and pass to backend
   // dogFeed("Dog Food")
 
-  nameDog = async nameItem => {
+  // nameDog = async nameItem => {
+  //   try {
+  //     let Item = {
+  //       name: nameItem
+  //     };
+  //     await axios.post("http://127.0.0.1:8000/api/pet/name/", Item);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
+  nameDog = async (Item, navigation) => {
     try {
-      let Item = {
-        name: nameItem
-      };
       await axios.post("http://127.0.0.1:8000/api/pet/name/", Item);
+      navigation.navigate("PetRoom");
     } catch (err) {
       console.error(err);
     }

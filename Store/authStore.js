@@ -15,7 +15,7 @@ class AuthStore {
       const user = res.data;
       this.setUser(user.token);
 
-      navigation.navigate("PetRoom");
+      navigation.navigate("Message");
     } catch (error) {
       console.log(error);
     }
