@@ -13,7 +13,7 @@ class AuthStore {
         userData
       );
       const user = res.data;
-      this.setUser(user.token);
+      await this.setUser(user.token);
 
       navigation.navigate("Message");
     } catch (error) {

@@ -28,9 +28,10 @@ class Login extends Component {
   //   this.setState({ email: value });
   // };
 
-  handleLogin = () => {
+  handleLogin = async () => {
     const navigation = this.props.navigation;
-    authStore.loginUser(this.state, navigation);
+    await authStore.loginUser(this.state, navigation);
+    this.setState({ username: "", password: "" });
   };
 
   // handleSignup = () => {
