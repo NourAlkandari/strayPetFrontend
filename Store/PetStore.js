@@ -26,7 +26,9 @@ class PetStore {
       let Item = {
         name: nameItem
       };
-      await axios.post("http://127.0.0.1:8000/api/pet/name/", Item);
+      await axios.put("http://127.0.0.1:8000/api/pet/name/", Item);
+      let petState = res.data;
+      this.setState({ petState: petState });
     } catch (err) {
       console.error(err);
     }
@@ -37,7 +39,7 @@ class PetStore {
       let Item = {
         food: foodItem
       };
-      await axios.post("http://127.0.0.1:8000/api/pet/feed/", Item);
+      await axios.put("http://127.0.0.1:8000/api/pet/feed/", Item);
     } catch (err) {
       console.error(err);
     }
