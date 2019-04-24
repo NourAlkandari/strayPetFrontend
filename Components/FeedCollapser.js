@@ -44,17 +44,17 @@ class FeedCollapser extends Component {
           </CollapseHeader>
           <CollapseBody>
             <StateButtons
-              itemImage={require("../assets/choco.png")}
+              itemImage={require("../assets/chocolate.png")}
               foodtype={"Chocolate"}
             />
 
             <StateButtons
-              itemImage={require("../assets/meat.png")}
+              itemImage={require("../assets/dogfood.png")}
               foodtype={"Dog Food"}
             />
 
             <StateButtons
-              itemImage={require("../assets/water.png")}
+              itemImage={require("../assets/todayslunch.png")}
               foodtype={"Today's Lunch"}
             />
           </CollapseBody>
