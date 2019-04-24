@@ -1,8 +1,7 @@
+//React Libraries and native base
 import React from "react";
 import { View, StyleSheet, Dimensions, Text } from "react-native";
-
 import ProgressBarAnimated from "react-native-progress-bar-animated";
-import petStore from "../Store/PetStore";
 
 export default class Bars extends React.Component {
   state = {
@@ -28,7 +27,9 @@ export default class Bars extends React.Component {
     return (
       <View style={styles.container}>
         <View>
-          <Text style={styles.label}>{this.props.name}</Text>
+          <Text style={styles.label}>
+            {this.props.name} {this.props.states}%
+          </Text>
           <ProgressBarAnimated
             width={barWidth}
             value={this.props.states}

@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
 // NativeBase Components
-import { Form, Item, Input, Text, View } from "native-base";
+import { Form, Item, Input, Text, View, Icon } from "native-base";
 
 // Store
 import authStore from "../Store/authStore";
@@ -11,8 +11,8 @@ import authStore from "../Store/authStore";
 class Login extends Component {
   state = {
     username: "",
-    password: "",
-    email: ""
+    password: ""
+    // email: ""
   };
   static navigationOptions = {
     title: "Login"
@@ -24,79 +24,85 @@ class Login extends Component {
   handleChangePassword = value => {
     this.setState({ password: value });
   };
-  handleChangeEmail = value => {
-    this.setState({ email: value });
+  // handleChangeEmail = value => {
+  //   this.setState({ email: value });
+  // };
+
+  handleLogin = async () => {
+    const navigation = this.props.navigation;
+    await authStore.loginUser(this.state, navigation);
+    this.setState({ username: "", password: "" });
   };
 
-  handleLogin = () => {
-    const navigation = this.props.navigation;
-    authStore.loginUser(this.state, navigation);
-  };
-
-  handleSignup = () => {
-    const navigation = this.props.navigation;
-    authStore.registerUser(this.state, navigation);
-  };
+  // handleSignup = () => {
+  //   const navigation = this.props.navigation;
+  //   authStore.registerUser(this.state, navigation);
+  // };
 
   render() {
-    // if (authStore.user) {
-    //   this.props.navigation.replace("PetRoom");
-    // }
     return (
-      // <>
-      //   <Image source={{ uri: oneofone }} />
-      <Form>
-        <Item>
-          <Input
-            style={styles.inputBox}
-            placeholder="Username"
-            autoCorrect={false}
-            autoCapitalize="none"
-            value={this.state.username}
-            onChangeText={this.handleChangeUsername}
-          />
-        </Item>
-        <Item>
-          <Input
-            style={styles.inputBox}
-            placeholder="Password"
-            autoCapitalize="none"
-            autoCorrect={false}
-            secureTextEntry={true}
-            value={this.state.password}
-            onChangeText={this.handleChangePassword}
-          />
-        </Item>
-        <Item>
-          <Input
-            style={styles.inputBox}
-            placeholder="email"
-            autoCapitalize="none"
-            autoCorrect={false}
-            value={this.state.email}
-            onChangeText={this.handleChangeEmail}
-          />
-        </Item>
-        <View style={styles.container} />
+      <>
+        <Form>
+          <Item>
+            <Icon type="FontAwesome" name="user" />
+            <Input
+              style={styles.inputBox}
+              placeholder="Username"
+              autoCorrect={false}
+              autoCapitalize="none"
+              value={this.state.username}
+              onChangeText={this.handleChangeUsername}
+            />
+          </Item>
+          <Item>
+            <Icon type="FontAwesome" name="lock" />
+            <Input
+              style={styles.inputBox}
+              placeholder="Password"
+              autoCapitalize="none"
+              autoCorrect={false}
+              secureTextEntry={true}
+              value={this.state.password}
+              onChangeText={this.handleChangePassword}
+            />
+          </Item>
+          {/* <Item>
+            <Input
+              style={styles.inputBox}
+              placeholder="email"
+              autoCapitalize="none"
+              autoCorrect={false}
+              value={this.state.email}
+              onChangeText={this.handleChangeEmail}
+            />
+          </Item> */}
+          <View style={styles.container} />
 
-        <TouchableOpacity style={styles.button}>
-          <Text onPress={this.handleLogin} style={styles.buttonText}>
-            Login
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button}>
+            <Text onPress={this.handleLogin} style={styles.buttonText}>
+              Login
+            </Text>
+          </TouchableOpacity>
+
+          {/* <TouchableOpacity style={styles.button}>
           <Text onPress={this.handleSignup} style={styles.buttonText}>
             SignUp
           </Text>
-        </TouchableOpacity>
-        {/* <Button full onPress={this.handleLogin}>
-          <Text style={styles.buttonText}>Login</Text>
-        </Button>
-        <Button full onPress={this.handleSignup}>
-          <Text style={styles.buttonText}>Sign up</Text>
-        </Button> */}
-      </Form>
-      // </>
+        </TouchableOpacity> */}
+          <View style={styles.container}>
+            <Text>{"\n"}Do you have account?</Text>
+            <TouchableOpacity>
+              <Text
+                style={{ color: "red" }}
+                onPress={() => this.props.navigation.navigate("Register")}
+              >
+                {"\n"}
+                Create New Account
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </Form>
+      </>
     );
   }
 }
