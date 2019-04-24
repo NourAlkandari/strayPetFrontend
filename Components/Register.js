@@ -1,8 +1,7 @@
+// React Libraries and NativeBase Components
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import { StyleSheet, TouchableOpacity } from "react-native";
-
-// NativeBase Components
 import { Form, Item, Input, Text, View, Icon } from "native-base";
 
 // Store
@@ -27,11 +26,6 @@ class Register extends Component {
   handleChangeEmail = value => {
     this.setState({ email: value });
   };
-
-  //   handleLogin = () => {
-  //     const navigation = this.props.navigation;
-  //     authStore.loginUser(this.state, navigation);
-  //   };
 
   handleSignup = () => {
     const navigation = this.props.navigation;

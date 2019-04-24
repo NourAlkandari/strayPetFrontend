@@ -1,17 +1,21 @@
 //React libraries and native base
 import React, { Component } from "react";
 import { View, Image, StyleSheet, TextInput } from "react-native";
-import * as Animatable from "react-native-animatable";
-import TypeWriter from "react-native-typewriter";
 
 //Components
 import Button from "./button";
+import LogoutButton from "./LogoutButton";
+import AnimatedMsgs from "./AnimatedMsgs";
 
 //Stores
 import petStore from "../Store/PetStore";
-import AnimatedMsgs from "./AnimatedMsgs";
 
 class FindingPuppy extends Component {
+  static navigationOptions = {
+    headerRight: <LogoutButton />,
+    headerLeft: null
+  };
+
   state = {
     name: ""
   };

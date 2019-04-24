@@ -11,7 +11,6 @@ import {
 
 //Components
 import StateButtons from "./StateButtons";
-// import CareIcon from "./icon";
 
 class FeedCollapser extends Component {
   state = {

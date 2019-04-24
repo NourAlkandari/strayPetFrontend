@@ -1,6 +1,6 @@
 //react
 import React, { Component } from "react";
-import { StyleSheet, Text, View, StatusBar, Image } from "react-native";
+import { StyleSheet, View, StatusBar, Image } from "react-native";
 import TypeWriter from "react-native-typewriter";
 
 //Components

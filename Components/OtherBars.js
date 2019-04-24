@@ -1,3 +1,4 @@
+//// React Libraries and Native Base
 import React, { Component } from "react";
 import { AppRegistry, StyleSheet, Text, View, Animated } from "react-native";
 

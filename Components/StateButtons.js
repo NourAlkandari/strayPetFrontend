@@ -1,8 +1,10 @@
+// React Libraries and Native Base
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity } from "react-native";
-
-import PetStore from "../Store/PetStore";
 import { Thumbnail } from "native-base";
+
+//Stores
+import PetStore from "../Store/PetStore";
 
 class StateButtons extends Component {
   handlepress = () => {

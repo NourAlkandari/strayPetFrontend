@@ -1,6 +1,5 @@
-import { decorate, observable, computed } from "mobx";
+import { decorate, observable } from "mobx";
 import axios from "axios";
-import authStore from "./authStore";
 
 class PetStore {
   petState = null;

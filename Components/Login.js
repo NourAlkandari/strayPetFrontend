@@ -1,8 +1,7 @@
+// React Libraries and Native Base
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import { StyleSheet, TouchableOpacity } from "react-native";
-
-// NativeBase Components
 import { Form, Item, Input, Text, View, Icon } from "native-base";
 
 // Store
@@ -24,20 +23,12 @@ class Login extends Component {
   handleChangePassword = value => {
     this.setState({ password: value });
   };
-  // handleChangeEmail = value => {
-  //   this.setState({ email: value });
-  // };
 
   handleLogin = async () => {
     const navigation = this.props.navigation;
     await authStore.loginUser(this.state, navigation);
     this.setState({ username: "", password: "" });
   };
-
-  // handleSignup = () => {
-  //   const navigation = this.props.navigation;
-  //   authStore.registerUser(this.state, navigation);
-  // };
 
   render() {
     return (
@@ -66,16 +57,7 @@ class Login extends Component {
               onChangeText={this.handleChangePassword}
             />
           </Item>
-          {/* <Item>
-            <Input
-              style={styles.inputBox}
-              placeholder="email"
-              autoCapitalize="none"
-              autoCorrect={false}
-              value={this.state.email}
-              onChangeText={this.handleChangeEmail}
-            />
-          </Item> */}
+
           <View style={styles.container} />
 
           <TouchableOpacity style={styles.button}>
@@ -84,11 +66,6 @@ class Login extends Component {
             </Text>
           </TouchableOpacity>
 
-          {/* <TouchableOpacity style={styles.button}>
-          <Text onPress={this.handleSignup} style={styles.buttonText}>
-            SignUp
-          </Text>
-        </TouchableOpacity> */}
           <View style={styles.container}>
             <Text>{"\n"}Do you have account?</Text>
             <TouchableOpacity>

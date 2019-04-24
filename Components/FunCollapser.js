@@ -1,4 +1,4 @@
-//react native and base
+//React Libraries and native base
 import React, { Component } from "react";
 import { View, TouchableOpacity, Text } from "react-native";
 import { Icon } from "native-base";

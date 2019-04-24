@@ -1,8 +1,8 @@
-// import React from "react";
+// React Navigation
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
 // Components
-// import Home from "../Components/Home";
+
 import PetRoom from "../Components/PetRoom";
 import SplashScreen from "../Components/SplashScreen";
 import Login from "../Components/Login";
@@ -13,7 +13,7 @@ import Register from "../Components/Register";
 const StackNav = createStackNavigator(
   {
     SplashScreen: SplashScreen,
-    // Home: Home,
+
     PetRoom: PetRoom,
     Login: Login,
     Register: Register,

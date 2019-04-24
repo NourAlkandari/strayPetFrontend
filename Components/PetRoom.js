@@ -2,8 +2,7 @@
 import React, { Component } from "react";
 import { StyleSheet, ImageBackground, View, Image } from "react-native";
 import { observer } from "mobx-react";
-import { Spinner, Text, Icon } from "native-base";
-import TypeWriter from "react-native-typewriter";
+import { Spinner } from "native-base";
 
 //Components
 import FeedCollapser from "./FeedCollapser";

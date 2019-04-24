@@ -1,11 +1,12 @@
+// React Libraries and Native Base
 import React, { Component } from "react";
 import { withNavigation } from "react-navigation";
 import { Icon, View, Text, Right } from "native-base";
 import { StyleSheet } from "react-native";
-import authStore from "../Store/authStore";
-
 import { observer } from "mobx-react";
-import { bold } from "ansi-colors";
+
+//Stores
+import authStore from "../Store/authStore";
 
 class CartButton extends Component {
   handleLogout = () => {
