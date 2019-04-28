@@ -15,21 +15,35 @@ class AuthStore {
       const user = res.data;
       await this.setUser(user.token);
 
+      navigation.navigate("PetRoom");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  registerUser = async (userData, navigation) => {
+    try {
+      const res = await axios.post(
+        "http://127.0.0.1:8000/api/register/",
+        userData
+      );
+      const user = res.data;
+      await this.setUser(user.token);
+
       navigation.navigate("Message");
     } catch (error) {
       console.log(error);
     }
   };
 
-  registerUser = async (userData, navigation) => {
-    try {
-      await axios.post("http://127.0.0.1:8000/api/register/", userData);
+  // registerUser = async (userData, navigation) => {
+  //   try {
+  //     await axios.post("http://127.0.0.1:8000/api/register/", userData);
 
-      this.loginUser(userData, navigation);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //     this.loginUser(userData, navigation);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   setUser = async token => {
     if (token) {

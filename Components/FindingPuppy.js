@@ -24,6 +24,7 @@ class FindingPuppy extends Component {
     const navigation = this.props.navigation;
     petStore.nameDog(this.state, navigation);
   };
+
   render() {
     return (
       <>
@@ -31,8 +32,14 @@ class FindingPuppy extends Component {
           msg={
             "Poor puppy  \n Someone had abonded it ...\n Please take care of it.. \n but first give your puppy a name"
           }
-          s={{ fontSize: 30 }}
+          s={{ fontSize: 30, fontFamily: "Noteworthy-Bold" }}
         />
+        {/* <AnimatedMsgs
+        msg={
+          "Poor puppy  \n Someone had abonded it ...\n Please take care of it.. \n but first give your puppy a name"
+        }
+        s={{ fontSize: 30, fontFamily: "Noteworthy-Bold" }}
+      /> */}
 
         <View style={styles.view}>
           <Image

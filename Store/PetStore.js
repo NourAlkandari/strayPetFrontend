@@ -47,7 +47,10 @@ class PetStore {
       let Item = {
         food: foodItem
       };
-      await axios.post("http://127.0.0.1:8000/api/pet/feed/", Item);
+      console.log("HELLOOOOOOO");
+      const res = await axios.post("http://127.0.0.1:8000/api/pet/feed/", Item);
+      const petState = res.data;
+      this.pet.state = petState;
     } catch (err) {
       console.error(err);
     }
