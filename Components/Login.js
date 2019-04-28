@@ -17,6 +17,23 @@ class Login extends Component {
     title: "Login"
   };
 
+  // ChangeTextUsername = (value)=>{
+  //   this.setState({ username: value })
+  //   if (this.state.username != ""){
+  //     alert ("Success")
+  //   }else{
+  //     alert("Please Enter Valid password")
+  //   }
+  // }
+  // ChangeTextPassword = (value)=>{
+  //   this.setState({ password: value })
+  //   if (this.state.password != ""){
+  //     alert ("Success")
+  //   }else{
+  //     alert("Please Enter Valid password")
+  //   }
+  // }
+
   handleChangeUsername = value => {
     this.setState({ username: value });
   };

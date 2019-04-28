@@ -6,16 +6,22 @@ import TypeWriter from "react-native-typewriter";
 
 class AnimatedMsgs extends Component {
   render() {
+    console.log("duration", this.props.time);
+
     return (
       <>
         <Animatable.View
-          useNativeDriver
+          // useNativeDriver
           style={styles.message}
-          animation="fadeInDown"
-          duration="3000"
+          animation={this.props.anime}
+          duration={this.props.time}
+          delay={this.props.delay}
+          onAnimationEnd={() => {
+            if (this.props.msgnum === 1) this.props._newmsg(true);
+          }}
         >
           <View style={styles.textContainer}>
-            <TypeWriter style={this.props.s} typing={1} maxDelay={100}>
+            <TypeWriter style={this.props.s} typing={1} maxDelay={300}>
               {this.props.msg}
             </TypeWriter>
           </View>
@@ -38,9 +44,5 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginRight: 30,
     minHeight: 80
-  },
-  text: {
-    fontFamily: "Noteworthy-Bold",
-    fontSize: 30
   }
 });
