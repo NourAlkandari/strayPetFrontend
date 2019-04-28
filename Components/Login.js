@@ -11,10 +11,23 @@ class Login extends Component {
   state = {
     username: "",
     password: ""
-    // email: ""
   };
   static navigationOptions = {
     title: "Login"
+  };
+  CheckTextInput = () => {
+    //Handler for the Submit onPress
+    if (this.state.username != "") {
+      //Check for the Name TextInput
+      if (this.state.password != "") {
+        //Check for the Email TextInput
+        alert("Success");
+      } else {
+        alert("Please Enter valid password");
+      }
+    } else {
+      alert("Please Enter Name");
+    }
   };
 
   handleChangeUsername = value => {
@@ -42,7 +55,9 @@ class Login extends Component {
               autoCorrect={false}
               autoCapitalize="none"
               value={this.state.username}
-              onChangeText={this.handleChangeUsername}
+              // onChangeText={this.handleChangeUsername}
+              onChangeText={username => this.setState({ username })}
+              underlineColorAndroid="transparent"
             />
           </Item>
           <Item>

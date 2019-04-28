@@ -5,6 +5,9 @@ import * as Animatable from "react-native-animatable";
 import TypeWriter from "react-native-typewriter";
 
 class AnimatedMsgs extends Component {
+  state = {
+    messages: ["", " ", "", ""]
+  };
   render() {
     return (
       <>

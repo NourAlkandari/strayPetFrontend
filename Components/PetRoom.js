@@ -60,6 +60,15 @@ class PetRoom extends Component {
                 source={require("../assets/test2.gif")}
                 style={{ width: "80%", height: "80%" }}
               />
+
+              {/* <Image
+                source={
+                  true
+                    ? require("../assets/test2.gif")
+                    : require("../assets/test2.gif")
+                }
+                style={{ width: "80%", height: "80%" }}
+              /> */}
             </View>
           </View>
           <Bars states={petStore.pet.state.hunger} name="Hunger" />

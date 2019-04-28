@@ -23,6 +23,7 @@ class FindingPuppy extends Component {
   handlePress = () => {
     const navigation = this.props.navigation;
     petStore.nameDog(this.state, navigation);
+    navigation.navigate("Instructions");
   };
   render() {
     return (
@@ -36,7 +37,7 @@ class FindingPuppy extends Component {
 
         <View style={styles.view}>
           <Image
-            source={require("../assets/test2.gif")}
+            source={require("../assets/sad-doggo.gif")}
             style={{ width: "40%", height: "40%" }}
           />
           <TextInput

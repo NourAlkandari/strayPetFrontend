@@ -9,6 +9,7 @@ import Login from "../Components/Login";
 import Logout from "../Components/LogoutButton";
 import FindingPuppy from "../Components/FindingPuppy";
 import Register from "../Components/Register";
+import Instructions from "../Components/Instructions";
 
 const StackNav = createStackNavigator(
   {
@@ -18,7 +19,8 @@ const StackNav = createStackNavigator(
     Login: Login,
     Register: Register,
     Logout: Logout,
-    Message: FindingPuppy
+    Message: FindingPuppy,
+    Instructions: Instructions
   },
   {
     initialRouteName: "SplashScreen",

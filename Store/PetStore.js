@@ -30,13 +30,12 @@ class PetStore {
   //     console.error(err);
   //   }
   // };
-  nameDog = async (Item, navigation) => {
+  nameDog = async Item => {
     try {
       const res = await axios.post("http://127.0.0.1:8000/api/pet/name/", Item);
       const data = res.data;
       console.log("WHATS THE RESPONSE?", data);
       this.pet = data;
-      navigation.navigate("PetRoom");
     } catch (err) {
       console.error(err);
     }
