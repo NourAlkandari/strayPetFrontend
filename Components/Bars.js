@@ -1,6 +1,6 @@
 //React Libraries and native base
 import React from "react";
-import { View, StyleSheet, Dimensions, Text } from "react-native";
+import { StyleSheet, Dimensions, Text } from "react-native";
 import ProgressBarAnimated from "react-native-progress-bar-animated";
 
 export default class Bars extends React.Component {

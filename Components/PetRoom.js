@@ -5,11 +5,10 @@ import { observer } from "mobx-react";
 import { Spinner, Left } from "native-base";
 
 //Components
-import FeedCollapser from "./FeedCollapser";
-import FunCollapser from "./FunCollapser";
-import FeedCollapse from "./FeedCollapse";
+
+import FunCollapser from "../Components/Entertainment/FunCollapser";
+import FeedCollapse from "../Components/Feeding/FeedCollapse";
 import LogoutButton from "./LogoutButton";
-import Bars from "./Bars";
 import AnimatedMsgs from "./AnimatedMsgs";
 
 //Stores
@@ -36,7 +35,7 @@ class PetRoom extends Component {
       );
     } else if (
       petStore.pet.state.hunger >= 30 &&
-      petStore.pet.state.hunger < 60
+      petStore.pet.state.hunger < 70
     ) {
       return (
         <Image
@@ -63,10 +62,6 @@ class PetRoom extends Component {
       this.props.navigation.replace("Login");
     }
 
-    // if (!petStore.petState) {
-    //   return <ActivityIndicator size="small" color="#00ff00" />;
-    // }
-
     if (petStore.loading) {
       return <Spinner />;
     }
@@ -78,34 +73,19 @@ class PetRoom extends Component {
           style={styles.stylee}
         >
           <FeedCollapse />
+          {/* <FunCollapser /> */}
           <Left>
-            <Bars states={petStore.pet.state.hunger} name="Hunger" />
             <AnimatedMsgs
               msg={`Look like ${
                 petStore.pet.name
-              }  is hugry \n it was abonded and \ndidn't eat well \n feed it something healthy`}
+              } \n hasn’t been fed for a while,\nhow about you give him something to eat?`}
               s={{ fontSize: 25, fontFamily: "Noteworthy-Bold" }}
               time="9500"
               delay={0}
               anime="bounceInDown"
             />
             <View style={styles.iconRow}>{this._displayPet()}</View>
-            {/* </View> */}
           </Left>
-
-          {/* <FeedCollapser /> */}
-          {/* <FunCollapser /> */}
-
-          {/* <AnimatedMsgs
-            msg={`look at Feed Me Button \n you have three type of food \n feed me something healthy`}
-            s={{ fontSize: 25, fontFamily: "Noteworthy-Bold" }}
-            delay={20000}
-            time="9500"
-            anime="fadeInUp"
-          /> */}
-
-          {/* <View style={styles.container3}> */}
-          {/* <Bars states={petStore.pet.state.fun} name="Fun" /> */}
         </ImageBackground>
       </>
     );

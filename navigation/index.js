@@ -7,18 +7,20 @@ import PetRoom from "../Components/PetRoom";
 import SplashScreen from "../Components/SplashScreen";
 import Login from "../Components/Login";
 import Logout from "../Components/LogoutButton";
-import FindingPuppy from "../Components/FindingPuppy";
 import Register from "../Components/Register";
+import FindingPuppy from "../Components/FindingPuppy";
+import NamingPuppy from "../Components/NamingPuppy";
 
 const StackNav = createStackNavigator(
   {
     SplashScreen: SplashScreen,
-
     PetRoom: PetRoom,
     Login: Login,
     Register: Register,
     Logout: Logout,
-    Message: FindingPuppy
+    Message: FindingPuppy,
+    FindingPuppy: FindingPuppy,
+    NamingPuppy: NamingPuppy
   },
   {
     initialRouteName: "SplashScreen",
