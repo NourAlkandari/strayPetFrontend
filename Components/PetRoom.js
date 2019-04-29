@@ -35,7 +35,7 @@ class PetRoom extends Component {
       );
     } else if (
       petStore.pet.state.hunger >= 30 &&
-      petStore.pet.state.hunger < 60
+      petStore.pet.state.hunger < 70
     ) {
       return (
         <Image
