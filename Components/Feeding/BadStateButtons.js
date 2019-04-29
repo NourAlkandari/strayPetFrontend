@@ -64,8 +64,10 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 80,
-    height: 80,
+    // width: 80,
+    // height: 80,
+    marginRight: 25,
+    marginLeft: 25,
     opacity: 0.8,
     borderColor: "#fff"
     // borderWidth: 3

@@ -33,7 +33,8 @@ class FeedCollapse extends Component {
             style={{
               flexDirection: "row",
               alignItems: "center",
-              padding: 10
+              padding: 10,
+              backgroundColor: "#fff"
             }}
           >
             <View style={{ width: "25%", alignItems: "center" }}>
@@ -47,7 +48,8 @@ class FeedCollapse extends Component {
             style={{
               alignItems: "center",
               justifyContent: "center",
-              flexDirection: "row"
+              flexDirection: "row",
+              backgroundColor: "#fff"
             }}
           >
             <Collapse style={{ flexDirection: "row" }}>
@@ -57,15 +59,6 @@ class FeedCollapse extends Component {
                   foodtype={"Chocolate"}
                 />
               </CollapseHeader>
-              {/* <CollapseBody
-                style={{
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: 10
-                }}
-              >
-                <Text>+1 310 346 0018</Text>
-              </CollapseBody> */}
             </Collapse>
             <Collapse style={{ flexDirection: "row" }}>
               <CollapseHeader>
