@@ -14,6 +14,19 @@ class SoundStore {
       // An error occurred!
     }
   };
+  playSadDog = async () => {
+    try {
+      await this.soundObject.loadAsync(require("../assets/audio/sadsound.mp3"));
+      await this.soundObject.playAsync();
+      await this.soundObject.setIsLoopingAsync(false);
+      this.soundObject.stopAsync();
+
+      // Your sound is playing!
+    } catch (error) {
+      console.log("ERROR WHILE PLAYING AUDIO", error);
+      // An error occurred!
+    }
+  };
   playing = () => {
     console.log("play now");
     this.soundObject.playAsync();

@@ -19,7 +19,6 @@ class FindingPuppy extends Component {
   state = {
     name: ""
   };
-
   handlePressOk = () => {
     this.props.navigation.navigate("NamingPuppy");
   };
