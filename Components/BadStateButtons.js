@@ -24,10 +24,11 @@ class BadStateButtons extends Component {
     PetStore.dogFeed(this.props.foodtype);
     this.setState({ showToast: true });
     Toast.show({
-      text: "Oh! That's not Good",
+      text:
+        "oops, that’s not a good idea. chocolate and cocoa products can kill your dog. Try to pick something more suitable. ",
       textStyle: { color: "black", fontSize: 30 },
       buttonText: "Okay",
-      duration: 3000,
+      duration: 6000,
       position: "top",
       type: "danger",
       buttonTextStyle: { color: "black" },

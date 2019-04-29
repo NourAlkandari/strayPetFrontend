@@ -33,7 +33,7 @@ class FindingPuppy extends Component {
       buttonTextStyle: { color: "black" },
       buttonStyle: { backgroundColor: "#fff" }
     });
-    this.props.navigation.navigate("Login");
+    this.props.navigation.navigate("SplashScreen");
   };
   render() {
     return (

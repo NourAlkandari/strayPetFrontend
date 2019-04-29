@@ -9,7 +9,7 @@ import FeedCollapser from "./FeedCollapser";
 import FunCollapser from "./FunCollapser";
 import FeedCollapse from "./FeedCollapse";
 import LogoutButton from "./LogoutButton";
-import Bars from "./Bars";
+
 import AnimatedMsgs from "./AnimatedMsgs";
 
 //Stores
@@ -78,11 +78,10 @@ class PetRoom extends Component {
         >
           <FeedCollapse />
           <Left>
-            <Bars states={petStore.pet.state.hunger} name="Hunger" />
             <AnimatedMsgs
               msg={`Look like ${
                 petStore.pet.name
-              }  is hugry \n it was abonded and \ndidn't eat well \n feed it something healthy`}
+              } \n hasn’t been fed for a while,\nhow about you give him something to eat?`}
               s={{ fontSize: 25, fontFamily: "Noteworthy-Bold" }}
               time="9500"
               delay={0}

@@ -11,7 +11,12 @@ import {
 
 //Components
 import StateButtons from "./StateButtons";
-import BadStateButtons from "./BadStateButtons"
+import BadStateButtons from "./BadStateButtons";
+import Bars from "./Bars";
+
+//stores
+import petStore from "../Store/PetStore";
+
 class FeedCollapse extends Component {
   state = {
     collapsed: false //do not show the body by default
@@ -89,6 +94,17 @@ class FeedCollapse extends Component {
               </CollapseHeader>
             </Collapse>
           </CollapseBody>
+        </Collapse>
+        <Collapse>
+          <CollapseHeader
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              padding: 10
+            }}
+          >
+            <Bars states={petStore.pet.state.hunger} name="Hunger" />
+          </CollapseHeader>
         </Collapse>
       </View>
     );

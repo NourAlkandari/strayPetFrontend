@@ -13,9 +13,6 @@ class Register extends Component {
     password: "",
     email: ""
   };
-  static navigationOptions = {
-    header: null
-  };
 
   handleChangeUsername = value => {
     this.setState({ username: value });

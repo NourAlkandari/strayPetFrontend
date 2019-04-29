@@ -4949,6 +4949,11 @@ react-native-animatable@^1.3.2:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-background-audio@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/react-native-background-audio/-/react-native-background-audio-1.1.4.tgz#310b7aa6b70979d600371aa1e60889ca366c48cf"
+  integrity sha1-MQt6prcJedYANxqh5giJyjZsSM8=
+
 react-native-branch@2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-2.2.5.tgz#4074dd63b4973e6397d9ce50e97b57c77a518e9d"
@@ -5060,12 +5065,10 @@ react-native-screens@1.0.0-alpha.22, "react-native-screens@^1.0.0 || ^1.0.0-alph
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.22.tgz#7a120377b52aa9bbb94d0b8541a014026be9289b"
   integrity sha512-kSyAt0AeVU6N7ZonfV6dP6iZF8B7Bce+tk3eujXhzBGsLg0VSLnU7uE9VqJF0xdQrHR91ZjGgVMieo/8df9KTA==
 
-react-native-speech-bubble@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/react-native-speech-bubble/-/react-native-speech-bubble-0.4.1.tgz#a17d8ebe9f0a6bc91281cdc78b1f242aa5d4c272"
-  integrity sha512-HGulcnexu2jeWcnEPRkLwnFSxWGFSKlG+3PSW6jk9841H/lwca+Mmimwin4dwZkt/mAcMmO0NBC0/Q1IGE1AWQ==
-  dependencies:
-    prop-types "^15.6.0"
+react-native-sound@^0.10.12:
+  version "0.10.12"
+  resolved "https://registry.yarnpkg.com/react-native-sound/-/react-native-sound-0.10.12.tgz#f912d6f9d6e9e2b42b391e0226787628d940f01a"
+  integrity sha512-lhvzZ+ekNSHW9s4FjmxxGAQmd7yDT9FnHgJNP824cMyHRrTES/LgHnSOxES/1FWVoaQ8FdfbEHkWd2rN0G/L9A==
 
 react-native-status-bar-height@^2.2.0:
   version "2.3.1"
