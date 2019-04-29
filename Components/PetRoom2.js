@@ -7,7 +7,7 @@ import { Spinner, Left } from "native-base";
 //Components
 
 import FunCollapser from "../Components/Entertainment/FunCollapser";
-import FeedCollapse from "../Components/Feeding/FeedCollapse";
+
 import LogoutButton from "./LogoutButton";
 import AnimatedMsgs from "./AnimatedMsgs";
 
@@ -71,8 +71,7 @@ class PetRoom extends Component {
           source={require("../assets/backy.png")}
           style={styles.stylee}
         >
-          <FeedCollapse />
-          {/* <FunCollapser /> */}
+          <FunCollapser />
           <Left>
             <AnimatedMsgs
               msg={`Look like ${

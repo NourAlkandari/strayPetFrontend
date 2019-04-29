@@ -5,7 +5,7 @@ import { Thumbnail, Toast } from "native-base";
 import * as Animatable from "react-native-animatable";
 
 //Stores
-import PetStore from "../Store/PetStore";
+import PetStore from "../../Store/PetStore";
 
 class BadStateButtons extends Component {
   state = {
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 90,
-    height: 90,
+    width: 80,
+    height: 80,
     opacity: 0.8,
     borderColor: "#fff"
     // borderWidth: 3

@@ -1,6 +1,6 @@
 //react native and base
 import React, { Component } from "react";
-import { View, TouchableOpacity, Text } from "react-native";
+import { View, Text } from "react-native";
 import { Icon } from "native-base";
 import { observer } from "mobx-react";
 import {
@@ -10,14 +10,14 @@ import {
 } from "accordion-collapse-react-native";
 
 //Components
-import StateButtons from "./StateButtons";
-import BadStateButtons from "./BadStateButtons";
-import Bars from "./Bars";
+import FunStateButtons from "./FunStateButtons";
+import BadFunButtons from "./BadFunButtons";
+import Bars from "../Bars";
 
 //stores
-import petStore from "../Store/PetStore";
+import petStore from "../../Store/PetStore";
 
-class FeedCollapse extends Component {
+class FunCollapser extends Component {
   state = {
     collapsed: false //do not show the body by default
   };
@@ -39,9 +39,7 @@ class FeedCollapse extends Component {
             <View style={{ width: "25%", alignItems: "center" }}>
               <Icon name="food-fork-drink" type="MaterialCommunityIcons" />
             </View>
-            <Text style={{ fontFamily: "Noteworthy-Bold" }}>
-              Feed me something healthy
-            </Text>
+            <Text style={{ fontFamily: "Noteworthy-Bold" }}>Play with me</Text>
           </CollapseHeader>
           <CollapseBody
             style={{
@@ -52,49 +50,31 @@ class FeedCollapse extends Component {
           >
             <Collapse style={{ flexDirection: "row" }}>
               <CollapseHeader>
-                <BadStateButtons
-                  itemImage={require("../assets/chocolate.png")}
-                  foodtype={"Chocolate"}
+                <BadFunButtons
+                  itemImage={require("../../assets/toy1.png")}
+                  Entertaintype={"Ignore"}
                 />
               </CollapseHeader>
-              {/* <CollapseBody
-                style={{
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: 10
-                }}
-              >
-                <Text>+1 310 346 0018</Text>
-              </CollapseBody> */}
             </Collapse>
             <Collapse style={{ flexDirection: "row" }}>
               <CollapseHeader>
-                <StateButtons
-                  itemImage={require("../assets/dogfood.png")}
-                  foodtype={"Dog Food"}
+                <FunStateButtons
+                  itemImage={require("../../assets/toy2.png")}
+                  Entertaintype={"Walk Pet"}
                 />
               </CollapseHeader>
-
-              {/* <CollapseBody
-                style={{
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: 10
-                }}
-              >
-                <Text>sample@sample.ma</Text>
-              </CollapseBody> */}
             </Collapse>
             <Collapse style={{ flexDirection: "row" }}>
               <CollapseHeader>
-                <StateButtons
-                  itemImage={require("../assets/todayslunch.png")}
-                  foodtype={"Today's Lunch"}
+                <FunStateButtons
+                  itemImage={require("../../assets/toy3.png")}
+                  Entertaintype={"Go to Petstore"}
                 />
               </CollapseHeader>
             </Collapse>
           </CollapseBody>
         </Collapse>
+
         <Collapse>
           <CollapseHeader
             style={{
@@ -103,7 +83,7 @@ class FeedCollapse extends Component {
               padding: 10
             }}
           >
-            <Bars states={petStore.pet.state.hunger} name="Hunger" />
+            <Bars states={petStore.pet.state.fun} name="Fun" />
           </CollapseHeader>
         </Collapse>
       </View>
@@ -111,4 +91,4 @@ class FeedCollapse extends Component {
   }
 }
 
-export default observer(FeedCollapse);
+export default observer(FunCollapser);

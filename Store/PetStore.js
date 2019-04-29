@@ -55,6 +55,22 @@ class PetStore {
       console.error(err);
     }
   };
+  dogEntertain = async entertainmentItem => {
+    try {
+      let Item = {
+        entertainment: entertainmentItem
+      };
+      console.log("HELLOOOOOOO");
+      const res = await axios.post(
+        "http://127.0.0.1:8000/api/pet/entertain/",
+        Item
+      );
+      const petState = res.data;
+      this.pet.state = petState;
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   // trying to incorporate realtime needs decay (but how???)
   needsDecay = async x => {

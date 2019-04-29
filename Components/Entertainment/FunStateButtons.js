@@ -1,18 +1,13 @@
 // React Libraries and Native Base
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  TouchableWithoutFeedback
-} from "react-native";
+import { StyleSheet, TouchableWithoutFeedback } from "react-native";
 import { Thumbnail, Toast } from "native-base";
 import * as Animatable from "react-native-animatable";
 
 //Stores
-import PetStore from "../Store/PetStore";
+import PetStore from "../../Store/PetStore";
 
-class StateButtons extends Component {
+class FunStateButtons extends Component {
   state = {
     showToast: false
   };
@@ -26,7 +21,7 @@ class StateButtons extends Component {
       );
 
   handlePress = () => {
-    PetStore.dogFeed(this.props.foodtype);
+    PetStore.dogEntertain(this.props.Entertaintype);
     this.setState({ showToast: true });
     Toast.show({
       text: "Yes! That's Good For Puppy's Health",
@@ -43,11 +38,6 @@ class StateButtons extends Component {
   render() {
     return (
       <>
-        {/* <View style={styles.menuItem}>
-          <TouchableOpacity onPress={this.handlePress}>
-            <Thumbnail source={this.props.itemImage} style={styles.image} />
-          </TouchableOpacity>
-        </View> */}
         <TouchableWithoutFeedback onPress={this.handlePress}>
           <Animatable.View ref={this.handleViewRef}>
             <Thumbnail source={this.props.itemImage} style={styles.image} />
@@ -58,7 +48,7 @@ class StateButtons extends Component {
   }
 }
 
-export default StateButtons;
+export default FunStateButtons;
 const styles = StyleSheet.create({
   menuItem: {
     // width: "40%",
@@ -68,8 +58,10 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 100,
-    height: 100,
+    // width: 80,
+    // height: 80,
+    marginLeft: 25,
+    marginRight: 25,
     opacity: 0.8,
     borderColor: "#fff"
     // borderWidth: 3
