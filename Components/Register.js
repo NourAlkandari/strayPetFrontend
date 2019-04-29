@@ -14,7 +14,7 @@ class Register extends Component {
     email: ""
   };
   static navigationOptions = {
-    title: "Registration"
+    header: null
   };
 
   handleChangeUsername = value => {

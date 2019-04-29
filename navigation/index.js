@@ -8,7 +8,7 @@ import SplashScreen from "../Components/SplashScreen";
 import Login from "../Components/Login";
 import Logout from "../Components/LogoutButton";
 import FindingPuppy from "../Components/FindingPuppy";
-import Register from "../Components/Register";
+import Register from "./RegistrationStack";
 
 const StackNav = createStackNavigator(
   {
