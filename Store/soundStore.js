@@ -17,9 +17,10 @@ class SoundStore {
   playing = () => {
     console.log("play now");
     this.soundObject.playAsync();
-    stopSound = async () => {
-      this.soundObject.stopAsync();
-    };
+  };
+
+  stopSound = async () => {
+    this.soundObject.stopAsync();
   };
 }
 decorate(SoundStore, {

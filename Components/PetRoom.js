@@ -16,11 +16,16 @@ import AnimatedMsgs from "./AnimatedMsgs";
 import authStore from "../Store/authStore";
 import petStore from "../Store/PetStore";
 import soundStore from "../Store/soundStore";
+import { Button, Text } from "native-base";
 
 class PetRoom extends Component {
   static navigationOptions = {
     headerRight: <LogoutButton />,
-    headerLeft: null
+    headerLeft: (
+      <Button onPress={soundStore.stopSound}>
+        <Text style={{ color: "red" }}>mute</Text>
+      </Button>
+    )
   };
   state = { status: false };
   componentDidMount() {
