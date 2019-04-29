@@ -38,7 +38,7 @@ class PetStore {
       this.pet = data;
       navigation.navigate("PetRoom");
     } catch (err) {
-      console.error(err);
+      console.error("error while naming dog", err);
     }
   };
 
@@ -74,5 +74,4 @@ decorate(PetStore, {
   pet: observable
 });
 let petStore = new PetStore();
-
 export default petStore;

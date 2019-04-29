@@ -15,6 +15,7 @@ import AnimatedMsgs from "./AnimatedMsgs";
 //Stores
 import authStore from "../Store/authStore";
 import petStore from "../Store/PetStore";
+import soundStore from "../Store/soundStore";
 
 class PetRoom extends Component {
   static navigationOptions = {

@@ -8,6 +8,7 @@ import Button from "./button";
 
 //Stores
 import authStore from "../Store/authStore";
+import soundStore from "../Store/soundStore";
 
 class SplashScreen extends Component {
   static navigationOptions = {
