@@ -3,6 +3,7 @@ import { decorate, observable, action, computed } from "mobx";
 // import bgmusic from "../assets/audio/bgmusic.mp3";
 class SoundStore {
   soundObject = new Audio.Sound();
+  soundObject2 = new Audio.Sound();
   playSounds = async () => {
     try {
       await this.soundObject.loadAsync(require("../assets/audio/bgmusic.mp3"));
@@ -16,10 +17,11 @@ class SoundStore {
   };
   playSadDog = async () => {
     try {
-      await this.soundObject.loadAsync(require("../assets/audio/sadsound.mp3"));
-      await this.soundObject.playAsync();
-      await this.soundObject.setIsLoopingAsync(false);
-      this.soundObject.stopAsync();
+      await this.soundObject2.loadAsync(
+        require("../assets/audio/sadsound2.mp3")
+      );
+      await this.soundObject2.playAsync();
+      await this.soundObject.setIsMutedAsync(0.2);
 
       // Your sound is playing!
     } catch (error) {

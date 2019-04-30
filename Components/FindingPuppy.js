@@ -9,18 +9,23 @@ import TypeWriter from "react-native-typewriter";
 
 import LogoutButton from "./LogoutButton";
 import AnimatedMsgs from "./AnimatedMsgs";
+import soundStore from "../Store/soundStore";
+import { observer } from "mobx-react";
 
 class FindingPuppy extends Component {
   static navigationOptions = {
     headerRight: <LogoutButton />,
     headerLeft: null
   };
-
+  componentDidMount() {
+    soundStore.playSadDog();
+  }
   state = {
     name: ""
   };
   handlePressOk = () => {
     this.props.navigation.navigate("NamingPuppy");
+    soundStore.playSounds();
   };
   handlePressNo = () => {
     Toast.show({
@@ -88,7 +93,7 @@ class FindingPuppy extends Component {
     );
   }
 }
-export default FindingPuppy;
+export default observer(FindingPuppy);
 
 const styles = StyleSheet.create({
   stylee: {
