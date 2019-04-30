@@ -1,6 +1,14 @@
 import { decorate, observable } from "mobx";
 import axios from "axios";
 
+const instance = axios.create({
+  baseURL: "http://127.0.0.1:8000/"
+});
+
+// const instance = axios.create({
+//   baseURL: "http://127.0.0.1:8000/"
+// });
+
 class PetStore {
   loading = true;
   pet = null;
@@ -9,7 +17,7 @@ class PetStore {
 
   fetch = async () => {
     try {
-      let res = await axios.get("http://127.0.0.1:8000/api/pet/");
+      let res = await instance.get("/api/pet/");
       let pet = res.data;
       this.pet = pet;
       this.loading = false;
@@ -32,7 +40,7 @@ class PetStore {
   // };
   nameDog = async (Item, navigation) => {
     try {
-      const res = await axios.post("http://127.0.0.1:8000/api/pet/name/", Item);
+      const res = await instance.post("/api/pet/name/", Item);
       const data = res.data;
       console.log("WHATS THE RESPONSE?", data);
       this.pet = data;
@@ -48,7 +56,7 @@ class PetStore {
         food: foodItem
       };
       console.log("HELLOOOOOOO");
-      const res = await axios.post("http://127.0.0.1:8000/api/pet/feed/", Item);
+      const res = await instance.post("/api/pet/feed/", Item);
       const petState = res.data;
       this.pet.state = petState;
     } catch (err) {
@@ -61,10 +69,7 @@ class PetStore {
         entertainment: entertainmentItem
       };
       console.log("HELLOOOOOOO");
-      const res = await axios.post(
-        "http://127.0.0.1:8000/api/pet/entertain/",
-        Item
-      );
+      const res = await instance.post("/api/pet/entertain/", Item);
       const petState = res.data;
       this.pet.state = petState;
     } catch (err) {
@@ -72,22 +77,24 @@ class PetStore {
     }
   };
 
-  // trying to incorporate realtime needs decay (but how???)
-  needsDecay = async x => {
-    try {
-      // let res = await axios.post(`http://127.0.0.1:8000/api/pet/${pet.state}`);
-      let res = await axios.put("http://127.0.0.1:8000/api/pet/", x);
-      const currentDate = Date.now() / 1000;
-      this.pet = this.pet - currentDate;
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  // trying to incorporate realtime needs decay (but how???). #UNNECESSARY ATM
+  //   needsDecay = async x => {
+  //     try {
+  //       // let res = await instance.post(`http://127.0.0.1:8000/api/pet/${pet.state}`);
+  //       let res = await instance.put("/api/pet/", x);
+  //       const currentDate = Date.now() / 1000;
+  //       this.pet = this.pet - currentDate;
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   };
 }
+
 decorate(PetStore, {
   pet: observable,
   loading: observable,
   pet: observable
 });
+
 let petStore = new PetStore();
 export default petStore;
