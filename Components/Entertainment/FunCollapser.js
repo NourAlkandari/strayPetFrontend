@@ -37,7 +37,7 @@ class FunCollapser extends Component {
             }}
           >
             <View style={{ width: "25%", alignItems: "center" }}>
-              <Icon name="food-fork-drink" type="MaterialCommunityIcons" />
+              <Icon type="FontAwesome" name="soccer-ball-o" />
             </View>
             <Text style={{ fontFamily: "Noteworthy-Bold" }}>Play with me</Text>
           </CollapseHeader>
@@ -59,7 +59,7 @@ class FunCollapser extends Component {
             <Collapse style={{ flexDirection: "row" }}>
               <CollapseHeader>
                 <FunStateButtons
-                  itemImage={require("../../assets/toy2.png")}
+                  itemImage={require("../../assets/syring.png")}
                   Entertaintype={"Walk Pet"}
                 />
               </CollapseHeader>
@@ -67,7 +67,7 @@ class FunCollapser extends Component {
             <Collapse style={{ flexDirection: "row" }}>
               <CollapseHeader>
                 <FunStateButtons
-                  itemImage={require("../../assets/toy3.png")}
+                  itemImage={require("../../assets/tennisball.png")}
                   Entertaintype={"Go to Petstore"}
                 />
               </CollapseHeader>

@@ -10,6 +10,7 @@ import FunCollapser from "../Components/Entertainment/FunCollapser";
 import FeedCollapse from "../Components/Feeding/FeedCollapse";
 import LogoutButton from "./LogoutButton";
 import AnimatedMsgs from "./AnimatedMsgs";
+import EntertainButton from "./Entertainment/EntertainButton";
 
 //Stores
 import authStore from "../Store/authStore";
@@ -19,7 +20,10 @@ import soundStore from "../Store/soundStore";
 class PetRoom extends Component {
   static navigationOptions = {
     headerRight: <LogoutButton />,
-    headerLeft: null
+    headerLeft: <EntertainButton />,
+    headerStyle: {
+      backgroundColor: "transparent"
+    }
   };
   state = { status: false };
   componentDidMount() {
