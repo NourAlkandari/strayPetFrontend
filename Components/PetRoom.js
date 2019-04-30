@@ -21,6 +21,7 @@ class PetRoom extends Component {
   static navigationOptions = {
     headerRight: <LogoutButton />,
     headerLeft: <EntertainButton />,
+
     headerStyle: {
       backgroundColor: "transparent"
     }

@@ -13,7 +13,7 @@ import {
 import FunStateButtons from "./FunStateButtons";
 import BadFunButtons from "./BadFunButtons";
 import Bars from "../Bars";
-
+import Scrolltest from "../Scrolltest";
 //stores
 import petStore from "../../Store/PetStore";
 
@@ -48,19 +48,20 @@ class FunCollapser extends Component {
               flexDirection: "row"
             }}
           >
-            <Collapse style={{ flexDirection: "row" }}>
-              <CollapseHeader>
-                <BadFunButtons
+            {/* <Collapse style={{ flexDirection: "row" }}>
+              <CollapseHeader> */}
+            <Scrolltest />
+            {/* <BadFunButtons
                   itemImage={require("../../assets/toy1.png")}
-                  Entertaintype={"Ignore"}
-                />
-              </CollapseHeader>
-            </Collapse>
-            <Collapse style={{ flexDirection: "row" }}>
-              <CollapseHeader>
+                  Entertaintype={"Put to Bed"}
+                /> */}
+            {/* </CollapseHeader>
+            </Collapse> */}
+            {/* <Collapse style={{ flexDirection: "row" }}> */}
+            {/* <CollapseHeader>
                 <FunStateButtons
                   itemImage={require("../../assets/syring.png")}
-                  Entertaintype={"Walk Pet"}
+                  Entertaintype={"Syringe"}
                 />
               </CollapseHeader>
             </Collapse>
@@ -68,10 +69,10 @@ class FunCollapser extends Component {
               <CollapseHeader>
                 <FunStateButtons
                   itemImage={require("../../assets/tennisball.png")}
-                  Entertaintype={"Go to Petstore"}
+                  Entertaintype={"Play"}
                 />
-              </CollapseHeader>
-            </Collapse>
+              </CollapseHeader> */}
+            {/* </Collapse> */}
           </CollapseBody>
         </Collapse>
 
@@ -86,6 +87,17 @@ class FunCollapser extends Component {
             <Bars states={petStore.pet.state.fun} name="Fun" />
           </CollapseHeader>
         </Collapse>
+        {/* <Collapse>
+          <CollapseHeader
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              padding: 10
+            }}
+          >
+            <Scrolltest />
+          </CollapseHeader>
+        </Collapse> */}
       </View>
     );
   }
