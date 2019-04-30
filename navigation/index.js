@@ -10,6 +10,7 @@ import Logout from "../Components/LogoutButton";
 import Register from "../Components/Register";
 import FindingPuppy from "../Components/FindingPuppy";
 import NamingPuppy from "../Components/NamingPuppy";
+import PetRoom2 from "../Components/PetRoom2";
 
 const StackNav = createStackNavigator(
   {
@@ -20,7 +21,8 @@ const StackNav = createStackNavigator(
     Logout: Logout,
     Message: FindingPuppy,
     FindingPuppy: FindingPuppy,
-    NamingPuppy: NamingPuppy
+    NamingPuppy: NamingPuppy,
+    PetRoom2: PetRoom2
   },
   {
     initialRouteName: "SplashScreen",

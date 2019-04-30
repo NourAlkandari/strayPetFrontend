@@ -6,6 +6,7 @@ import AppContainer from "./navigation";
 
 class App extends React.Component {
   render() {
+    console.disableYellowBox = true;
     return (
       <Root>
         <AppContainer />

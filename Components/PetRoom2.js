@@ -5,11 +5,10 @@ import { observer } from "mobx-react";
 import { Spinner, Left } from "native-base";
 
 //Components
-
 import FunCollapser from "../Components/Entertainment/FunCollapser";
-
 import LogoutButton from "./LogoutButton";
 import AnimatedMsgs from "./AnimatedMsgs";
+import B2FeedButton from "./Feeding/B2FeedButton";
 
 //Stores
 import authStore from "../Store/authStore";
@@ -18,34 +17,34 @@ import petStore from "../Store/PetStore";
 class PetRoom extends Component {
   static navigationOptions = {
     headerRight: <LogoutButton />,
-    headerLeft: null
+    headerLeft: <B2FeedButton />,
+    headerStyle: {
+      backgroundColor: "transparent"
+    }
   };
   state = { status: false };
   componentDidMount() {
     petStore.fetch();
   }
   _displayPet = () => {
-    if (petStore.pet.state.hunger < 30) {
+    if (petStore.pet.state.fun < 30) {
       return (
         <Image
-          source={require("../assets/sad-doggo.gif")}
+          source={require("..//assets/sick-doggo.gif")}
           style={{ width: "100%", height: "100%" }}
         />
       );
-    } else if (
-      petStore.pet.state.hunger >= 30 &&
-      petStore.pet.state.hunger < 70
-    ) {
+    } else if (petStore.pet.state.fun >= 30 && petStore.pet.state.fun < 70) {
       return (
         <Image
-          source={require("../assets/hungry-doggo.gif")}
+          source={require("../assets/sleeping-doggo.gif")}
           style={{ width: "120%", height: "120%" }}
         />
       );
     } else {
       return (
         <Image
-          source={require("../assets/happy-doggo.gif")}
+          source={require("../assets/doggo-playing.gif")}
           style={{ width: "100%", height: "100%" }}
         />
       );
@@ -68,7 +67,7 @@ class PetRoom extends Component {
     return (
       <>
         <ImageBackground
-          source={require("../assets/backy.png")}
+          source={require("../assets/newbg2.jpg")}
           style={styles.stylee}
         >
           <FunCollapser />
