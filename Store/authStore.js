@@ -3,15 +3,16 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 import { AsyncStorage } from "react-native";
 
+const instance = axios.create({
+  baseURL: "http://127.0.0.1:8000/"
+});
+
 class AuthStore {
   user = null;
 
   loginUser = async (userData, navigation) => {
     try {
-      const res = await axios.post(
-        "http://127.0.0.1:8000/api/login/",
-        userData
-      );
+      const res = await instance.post("/api/login/", userData);
       const user = res.data;
       await this.setUser(user.token);
 
@@ -22,10 +23,7 @@ class AuthStore {
   };
   registerUser = async (userData, navigation) => {
     try {
-      const res = await axios.post(
-        "http://127.0.0.1:8000/api/register/",
-        userData
-      );
+      const res = await instance.post("/api/register/", userData);
       const user = res.data;
       await this.setUser(user.token);
 
