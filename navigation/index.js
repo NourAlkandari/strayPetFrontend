@@ -15,7 +15,6 @@ import Scrolltest from "../Components/Scrolltest";
 import TapsView from "../Components/TapsView";
 import FoundThePuppy from "../Components/FoundThePuppy";
 
-
 const StackNav = createStackNavigator(
   {
     SplashScreen: SplashScreen,
@@ -29,10 +28,9 @@ const StackNav = createStackNavigator(
     PetRoom2: PetRoom2,
 
     Scrolltest: Scrolltest,
-    TapsView: TapsView
+    TapsView: TapsView,
 
     FoundThePuppy: FoundThePuppy
-
   },
   {
     initialRouteName: "SplashScreen",
