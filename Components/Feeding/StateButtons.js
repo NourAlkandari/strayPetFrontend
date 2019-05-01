@@ -26,12 +26,12 @@ class StateButtons extends Component {
     Toast.show({
       text: "Yes! That's Good For Puppy's Health",
       textStyle: { color: "black", fontSize: 30 },
-      buttonText: "Okay",
+      buttonText: "X",
       duration: 3000,
       position: "top",
       type: "success",
       buttonTextStyle: { color: "black" },
-      buttonStyle: { backgroundColor: "#fff" }
+      buttonStyle: { backgroundColor: "transparent" }
     });
     this.bounce();
   };

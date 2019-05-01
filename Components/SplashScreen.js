@@ -1,6 +1,12 @@
 //react
 import React, { Component } from "react";
-import { StyleSheet, View, StatusBar, Image } from "react-native";
+import {
+  StyleSheet,
+  View,
+  StatusBar,
+  Image,
+  ImageBackground
+} from "react-native";
 import TypeWriter from "react-native-typewriter";
 
 //Components
@@ -29,26 +35,25 @@ class SplashScreen extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <TypeWriter typing={1} style={styles.welcome}>
-          Welcome to Stray Dog Game!
-        </TypeWriter>
-        {/* <Image
-          source={require("../assets/Puppy.gif")}
-        /> */}
-        <StatusBar barStyle="light-content" backgroundColor="#4F6D7A" />
+      <ImageBackground
+        source={require("../assets/new-bg3.jpg")}
+        style={styles.stylee}
+      >
+        <View style={styles.container}>
+          <StatusBar barStyle="light-content" backgroundColor="#4F6D7A" />
+          <Image
+            source={require("../assets/test2.gif")}
+            style={{ width: "50%", height: "50%", backgroundColor: "rgba" }}
+          />
 
-        <Button
-          onPress={this.handlePress}
-          title="Play"
-          backgroundStyle={styles.buttonBackground}
-          textStyle={styles.buttonText}
-        />
-        <Image
-          source={require("../assets/test2.gif")}
-          style={{ width: "50%", height: "50%", backgroundColor: "rgba" }}
-        />
-      </View>
+          <Button
+            onPress={this.handlePress}
+            title="Play"
+            backgroundStyle={styles.buttonBackground}
+            textStyle={styles.buttonText}
+          />
+        </View>
+      </ImageBackground>
     );
   }
 }
@@ -59,6 +64,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center"
+  },
+  stylee: {
+    flex: 1,
+    width: "100%",
+    height: "100%"
   },
   welcome: {
     fontFamily: "Noteworthy-Bold",
