@@ -23,7 +23,6 @@
     "react-native-extended-stylesheet": "^0.11.1",
     "react-native-linear-gradient": "^2.5.4",
     "react-native-progress-bar-animated": "^1.0.6",
-    "react-git nd": "^0.10.12",
     "react-native-typewriter": "^0.6.1",
     "react-navigation": "^3.8.1"
   },

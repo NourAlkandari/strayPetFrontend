@@ -13,6 +13,8 @@ import NamingPuppy from "../Components/NamingPuppy";
 import PetRoom2 from "../Components/PetRoom2";
 import Scrolltest from "../Components/Scrolltest";
 import TapsView from "../Components/TapsView";
+import FoundThePuppy from "../Components/FoundThePuppy";
+
 
 const StackNav = createStackNavigator(
   {
@@ -25,8 +27,12 @@ const StackNav = createStackNavigator(
     FindingPuppy: FindingPuppy,
     NamingPuppy: NamingPuppy,
     PetRoom2: PetRoom2,
+
     Scrolltest: Scrolltest,
     TapsView: TapsView
+
+    FoundThePuppy: FoundThePuppy
+
   },
   {
     initialRouteName: "SplashScreen",
