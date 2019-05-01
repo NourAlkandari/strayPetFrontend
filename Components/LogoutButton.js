@@ -8,7 +8,7 @@ import { observer } from "mobx-react";
 //Stores
 import authStore from "../Store/authStore";
 
-class CartButton extends Component {
+class LogoutButton extends Component {
   handleLogout = () => {
     const navigation = this.props.navigation;
     authStore.logout(navigation);
@@ -30,7 +30,7 @@ class CartButton extends Component {
   }
 }
 
-export default withNavigation(observer(CartButton));
+export default withNavigation(observer(LogoutButton));
 const styles = StyleSheet.create({
   storyCounters: {
     flexDirection: "row"

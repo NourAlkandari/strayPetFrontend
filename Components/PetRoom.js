@@ -1,6 +1,12 @@
 //React libraries and native base
 import React, { Component } from "react";
-import { StyleSheet, ImageBackground, View, Image } from "react-native";
+import {
+  StyleSheet,
+  ImageBackground,
+  View,
+  Image,
+  StatusBar
+} from "react-native";
 import { observer } from "mobx-react";
 import { Spinner, Left, Icon } from "native-base";
 
@@ -29,9 +35,7 @@ class PetRoom extends Component {
     }
   };
   state = { status: false, muteButton: false };
-  componentDidMount() {
-    petStore.fetch();
-  }
+
   _displayPet = () => {
     if (petStore.pet.state.hunger < 30) {
       return (
@@ -82,9 +86,6 @@ class PetRoom extends Component {
 
   render() {
     // console.log("CHECK CHECK", authStore.user);
-    if (!authStore.user) {
-      this.props.navigation.replace("Login");
-    }
 
     if (petStore.loading) {
       return <Spinner />;
@@ -96,6 +97,7 @@ class PetRoom extends Component {
           source={require("../assets/Backk.png")}
           style={styles.stylee}
         >
+          <StatusBar barStyle="light-content" backgroundColor="#4F6D7A" />
           <FeedCollapse />
           {/* <FunCollapser /> */}
           <Left>

@@ -44,7 +44,7 @@ class PetStore {
       const data = res.data;
       console.log("WHATS THE RESPONSE?", data);
       this.pet = data;
-      navigation.navigate("PetRoom");
+      navigation.navigate("TapsView");
     } catch (err) {
       console.error("error while naming dog", err);
     }

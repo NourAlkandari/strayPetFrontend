@@ -25,7 +25,7 @@ class FoundThePuppy extends Component {
     soundStore.playSadDog();
   }
   handlePressOk = () => {
-    this.props.navigation.navigate("PetRoom");
+    this.props.navigation.navigate("TapsView");
     soundStore.playSounds();
   };
   render() {

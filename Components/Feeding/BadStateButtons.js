@@ -27,12 +27,12 @@ class BadStateButtons extends Component {
       text:
         "oops, that’s not a good idea. chocolate and cocoa products can kill your dog. Try to pick something more suitable. ",
       textStyle: { color: "black", fontSize: 30 },
-      buttonText: "Okay",
+      buttonText: "X",
       duration: 6000,
       position: "top",
       type: "danger",
       buttonTextStyle: { color: "black" },
-      buttonStyle: { backgroundColor: "#fff" }
+      buttonStyle: { backgroundColor: "transparent" }
     });
     this.bounce();
   };

@@ -81,7 +81,8 @@ class FindingPuppy extends Component {
           </Animatable.View>
           <Image
             source={require("../assets/bw-sad-doggo.gif")}
-            style={{ width: "40%", height: "40%" }}
+            style={{ flex: 1, width: undefined, height: undefined }}
+            resizeMode="contain"
           />
           {/* <AnimatedMsgs
         msg={
