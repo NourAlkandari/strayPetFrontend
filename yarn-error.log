@@ -1,14 +1,14 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.13.0/libexec/bin/yarn.js add react-native-track-player
+  /usr/local/Cellar/node/11.10.0/bin/node /usr/local/Cellar/yarn/1.13.0/libexec/bin/yarn.js
 
 PATH: 
-  usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:usr/local/bin:/Users/nourahalrabah/bin:/Users/nourahalrabah/bin
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
 
 Yarn version: 
   1.13.0
 
 Node version: 
-  10.15.3
+  11.10.0
 
 Platform: 
   darwin x64
@@ -17,14 +17,14 @@ Trace:
   Error: https://registry.yarnpkg.com/react-git%20nd: Not found
       at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:66255:18)
       at Request.self.callback (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:129397:22)
-      at Request.emit (events.js:189:13)
+      at Request.emit (events.js:197:13)
       at Request.<anonymous> (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:130369:10)
-      at Request.emit (events.js:189:13)
+      at Request.emit (events.js:197:13)
       at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:130291:12)
-      at Object.onceWrapper (events.js:277:13)
-      at IncomingMessage.emit (events.js:194:15)
-      at endReadableNT (_stream_readable.js:1125:12)
-      at process._tickCallback (internal/process/next_tick.js:63:19)
+      at Object.onceWrapper (events.js:285:13)
+      at IncomingMessage.emit (events.js:202:15)
+      at endReadableNT (_stream_readable.js:1129:12)
+      at processTicksAndRejections (internal/process/next_tick.js:76:17)
 
 npm manifest: 
   {
@@ -46,10 +46,8 @@ npm manifest:
       "mobx-react": "^5.4.3",
       "native-base": "^2.12.1",
       "react": "16.5.0",
-      "react-lottie": "^1.2.3",
       "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
       "react-native-animatable": "^1.3.2",
-      "react-native-background-audio": "^1.1.4",
       "react-native-elements": "^1.1.0",
       "react-native-extended-stylesheet": "^0.11.1",
       "react-native-linear-gradient": "^2.5.4",
