@@ -21,15 +21,12 @@ const StackNav = createStackNavigator(
     PetRoom: PetRoom,
     Login: Login,
     Register: Register,
-    Logout: Logout,
     Message: FindingPuppy,
     FindingPuppy: FindingPuppy,
     NamingPuppy: NamingPuppy,
     PetRoom2: PetRoom2,
-
     Scrolltest: Scrolltest,
     TapsView: TapsView,
-
     FoundThePuppy: FoundThePuppy
   },
   {

@@ -29,9 +29,7 @@ class PetRoom extends Component {
     }
   };
   state = { status: false, muteButton: false };
-  componentDidMount() {
-    petStore.fetch();
-  }
+
   _displayPet = () => {
     if (petStore.pet.state.hunger < 30) {
       return (
@@ -82,9 +80,9 @@ class PetRoom extends Component {
 
   render() {
     // console.log("CHECK CHECK", authStore.user);
-    if (!authStore.user) {
-      this.props.navigation.replace("Login");
-    }
+    // if (!authStore.user) {
+    //   this.props.navigation.replace("Login");
+    // }
 
     if (petStore.loading) {
       return <Spinner />;

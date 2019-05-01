@@ -23,7 +23,7 @@ class SplashScreen extends Component {
     if (!authStore.user) {
       this.props.navigation.navigate("Login");
     } else {
-      this.props.navigation.replace("PetRoom");
+      this.props.navigation.replace("TapsView");
     }
   };
 
