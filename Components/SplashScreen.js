@@ -27,7 +27,7 @@ class SplashScreen extends Component {
 
   handlePress = () => {
     if (!authStore.user) {
-      this.props.navigation.navigate("Login");
+      this.props.navigation.replace("Login");
     } else {
       this.props.navigation.replace("TapsView");
     }
