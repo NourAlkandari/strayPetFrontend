@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { StyleSheet, ImageBackground, View, Image } from "react-native";
 import { observer } from "mobx-react";
-import { Spinner, Left } from "native-base";
+import { Spinner, Left, Icon } from "native-base";
 
 //Components
 
@@ -16,16 +16,19 @@ import EntertainButton from "./Entertainment/EntertainButton";
 import authStore from "../Store/authStore";
 import petStore from "../Store/PetStore";
 import soundStore from "../Store/soundStore";
+import Button from "./button";
+import MuteButton from "./MuteButton";
 
 class PetRoom extends Component {
   static navigationOptions = {
     headerRight: <LogoutButton />,
-    headerLeft: <EntertainButton />,
+    // headerLeft: <EntertainButton />,
+    headerLeft: <MuteButton />,
     headerStyle: {
       backgroundColor: "transparent"
     }
   };
-  state = { status: false };
+  state = { status: false, muteButton: false };
   componentDidMount() {
     petStore.fetch();
   }
@@ -56,12 +59,29 @@ class PetRoom extends Component {
       );
     }
   };
+
+  handleSound = () => {
+    if (this.state.button) {
+      soundStore.playing();
+      this.setState({ button: !this.state.button });
+    } else {
+      soundStore.stopSound();
+      this.setState({ button: !this.state.button });
+    }
+  };
+
+  handleMute = () => {
+    console.log("YES", this.state.button);
+    soundStore.stopSound();
+    let newState = this.state.button;
+    this.setState({ muteButton: !newState });
+  };
   _msgdesappeared = status => {
     if (status) this.setState({ status: status });
   };
 
   render() {
-    console.log("CHECK CHECK", authStore.user);
+    // console.log("CHECK CHECK", authStore.user);
     if (!authStore.user) {
       this.props.navigation.replace("Login");
     }
