@@ -4,11 +4,13 @@ import { View, Image, StyleSheet, ImageBackground } from "react-native";
 import { Button, Text, Toast } from "native-base";
 import * as Animatable from "react-native-animatable";
 import TypeWriter from "react-native-typewriter";
+import { observer } from "mobx-react";
 
 //Components
 
 import LogoutButton from "./LogoutButton";
 import AnimatedMsgs from "./AnimatedMsgs";
+import soundStore from "../Store/soundStore";
 
 class FindingPuppy extends Component {
   static navigationOptions = {
@@ -19,8 +21,12 @@ class FindingPuppy extends Component {
   state = {
     name: ""
   };
+  componentDidMount() {
+    soundStore.playSadDog();
+  }
   handlePressOk = () => {
     this.props.navigation.navigate("NamingPuppy");
+    soundStore.playSounds();
   };
   handlePressNo = () => {
     Toast.show({
@@ -88,7 +94,7 @@ class FindingPuppy extends Component {
     );
   }
 }
-export default FindingPuppy;
+export default observer(FindingPuppy);
 
 const styles = StyleSheet.create({
   stylee: {
@@ -121,7 +127,8 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   buttonBackground: {
-    backgroundColor: "#d3cfcf",
+    // backgroundColor: "#d3cfcf",
+    backgroundColor: "rgb(220,220,220)",
     width: 90,
     marginLeft: 10
   },

@@ -55,7 +55,7 @@ class PetRoom extends Component {
   };
 
   render() {
-    console.log("CHECK CHECK", authStore.user);
+    // console.log("CHECK CHECK", authStore.user);
     if (!authStore.user) {
       this.props.navigation.replace("Login");
     }
