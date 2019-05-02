@@ -69,11 +69,11 @@ class FindingPuppy extends Component {
               maxDelay={200}
             >
               {
-                "Poor puppy! \n Looks like someone abonded it..\n The poor dogy needs some care.. \n Would you like to take care of it?"
+                "Oh no! Poor pupper!\n Looks like it has been abandoned! \n Do you want to help?"
               }
             </TypeWriter>
           </View>
-          <Animatable.View style={styles.view} animation="zoomIn" delay="15000">
+          <Animatable.View style={styles.view} animation="zoomIn" delay="10000">
             <Button
               block
               light
@@ -81,13 +81,13 @@ class FindingPuppy extends Component {
               style={{ marginBottom: 10, marginTop: 10 }}
             >
               <Text style={{ fontSize: 20, fontFamily: "Noteworthy-Bold" }}>
-                Of course! Can't let the doggie suffer
+                Of course! Can't let the doggo suffer
               </Text>
             </Button>
 
             <Button block light onPress={this.handlePressNo}>
               <Text style={{ fontSize: 20, fontFamily: "Noteworthy-Bold" }}>
-                I don't think I'm ready yet!{" "}
+                I don't think I'm ready yet!
               </Text>
             </Button>
           </Animatable.View>
@@ -96,12 +96,6 @@ class FindingPuppy extends Component {
             style={{ flex: 1, width: undefined, height: undefined }}
             resizeMode="contain"
           />
-          {/* <AnimatedMsgs
-        msg={
-          "Poor puppy  \n Someone had abonded it ...\n Please take care of it.. \n but first give your puppy a name"
-        }
-        s={{ fontSize: 30, fontFamily: "Noteworthy-Bold" }}
-      /> */}
         </ImageBackground>
       </>
     );

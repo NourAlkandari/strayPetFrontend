@@ -22,17 +22,6 @@ class FunStateButtons extends Component {
 
   handlePress = () => {
     PetStore.dogEntertain(this.props.Entertaintype);
-    this.setState({ showToast: true });
-    Toast.show({
-      text: "Yes! That's Good For Puppy's Health",
-      textStyle: { color: "black", fontSize: 30 },
-      buttonText: "X",
-      duration: 3000,
-      position: "top",
-      type: "success",
-      buttonTextStyle: { color: "black" },
-      buttonStyle: { backgroundColor: "transparent" }
-    });
     this.bounce();
   };
   render() {

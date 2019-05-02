@@ -28,18 +28,18 @@ class PetRoom extends Component {
   }
 
   _displayPet = () => {
-    if (petStore.pet.state.sleep < 30) {
+    if (petStore.pet.state.sleep < 60) {
       return (
         <Image
           source={require("..//assets/sleeping-doggo.gif")}
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "90%", height: "60%" }}
         />
       );
     } else {
       return (
         <Image
-          source={require("../assets/doggo-playing.gif")}
-          style={{ width: "100%", height: "100%" }}
+          source={require("../assets/happy-doggo.gif")}
+          style={{ width: "90%", height: "100%" }}
         />
       );
     }
@@ -62,15 +62,13 @@ class PetRoom extends Component {
     return (
       <>
         <ImageBackground
-          source={require("../assets/newbg2.jpg")}
+          source={require("../assets/Backk.png")}
           style={styles.stylee}
         >
           <SleepCollapse />
           <Left>
             <AnimatedMsgs
-              msg={`Look like ${
-                petStore.pet.name
-              } \n hasn’t been fed for a while,\nhow about you give him something to eat?`}
+              msg={` Nap time for ${petStore.pet.name}?`}
               s={{ fontSize: 25, fontFamily: "Noteworthy-Bold" }}
               time="9500"
               delay={0}

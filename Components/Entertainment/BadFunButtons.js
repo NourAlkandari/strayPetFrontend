@@ -22,18 +22,6 @@ class BadFunButtons extends Component {
 
   handlePress = () => {
     PetStore.dogEntertain(this.props.Entertaintype);
-    this.setState({ showToast: true });
-    Toast.show({
-      text:
-        "oops, that’s not a good idea. chocolate and cocoa products can kill your dog. Try to pick something more suitable. ",
-      textStyle: { color: "black", fontSize: 30 },
-      buttonText: "X",
-      duration: 6000,
-      position: "top",
-      type: "danger",
-      buttonTextStyle: { color: "black" },
-      buttonStyle: { backgroundColor: "transparent" }
-    });
     this.bounce();
   };
   render() {

@@ -30,22 +30,22 @@ class PetRoom extends Component {
     if (petStore.pet.state.fun < 30) {
       return (
         <Image
-          source={require("..//assets/sick-doggo.gif")}
+          source={require("../assets/test2.gif")}
           style={{ width: "100%", height: "100%" }}
         />
       );
-    } else if (petStore.pet.state.fun >= 30 && petStore.pet.state.fun < 70) {
-      return (
-        <Image
-          source={require("../assets/sleeping-doggo.gif")}
-          style={{ width: "120%", height: "120%" }}
-        />
-      );
+      // } else if (petStore.pet.state.fun >= 30 && petStore.pet.state.fun < 70) {
+      //   return (
+      //     <Image
+      //       source={require("../assets/sleeping-doggo.gif")}
+      //       style={{ width: "120%", height: "120%" }}
+      //     />
+      //   );
     } else {
       return (
         <Image
           source={require("../assets/doggo-playing.gif")}
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "130%", height: "100%" }}
         />
       );
     }
@@ -73,9 +73,7 @@ class PetRoom extends Component {
           <FunCollapser />
           <Left>
             <AnimatedMsgs
-              msg={`Look like ${
-                petStore.pet.name
-              } \n hasn’t been fed for a while,\nhow about you give him something to eat?`}
+              msg={` ${petStore.pet.name} looks bored! \n Let's play!`}
               s={{ fontSize: 25, fontFamily: "Noteworthy-Bold" }}
               time="9500"
               delay={0}

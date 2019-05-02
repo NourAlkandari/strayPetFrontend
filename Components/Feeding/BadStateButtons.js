@@ -31,7 +31,7 @@ class BadStateButtons extends Component {
     this.setState({ showToast: true, bad: true });
     Toast.show({
       text:
-        "oops, that’s not a good idea. chocolate and cocoa products can kill your dog. Try to pick something more suitable. ",
+        "That’s not a good idea. Chocolate and cocoa products can kill your dog.",
       textStyle: { color: "black", fontSize: 30 },
       buttonText: "X",
       duration: 6000,

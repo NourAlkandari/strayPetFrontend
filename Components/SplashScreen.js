@@ -53,7 +53,7 @@ class SplashScreen extends Component {
 
           <Button
             onPress={this.handlePress}
-            title="Play"
+            title="PLAY"
             backgroundStyle={styles.buttonBackground}
             textStyle={styles.buttonText}
           />

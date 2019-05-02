@@ -41,11 +41,13 @@ class VetCollapse extends Component {
           >
             <View style={{ width: "25%", alignItems: "center" }}>
               <VetButton
-                itemImage={require("../../assets/vet.png")}
+                itemImage={require("../../assets/syring.png")}
                 vet={"Syringe"}
               />
             </View>
-            <Text style={{ fontFamily: "Noteworthy-Bold" }}>Put me to bed</Text>
+            <Text style={{ fontFamily: "Noteworthy-Bold" }}>
+              Make me feel better
+            </Text>
           </CollapseHeader>
           {/* <CollapseBody
             style={{

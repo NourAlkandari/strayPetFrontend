@@ -39,11 +39,30 @@ class FunCollapser extends Component {
             }}
           >
             <View style={{ width: "25%", alignItems: "center" }}>
+              <FunStateButtons
+                itemImage={require("../../assets/tennisball.png")}
+                Entertaintype={"Play"}
+              />
+            </View>
+            <Text style={{ fontFamily: "Noteworthy-Bold", fontSize: 24 }}>
+              {" "}
+              Fetch!{" "}
+            </Text>
+          </CollapseHeader>
+          {/* <CollapseHeader
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              padding: 10,
+              backgroundColor: "#fff"
+            }}
+          >
+            <View style={{ width: "25%", alignItems: "center" }}>
               <Icon type="FontAwesome" name="soccer-ball-o" />
             </View>
             <Text style={{ fontFamily: "Noteworthy-Bold" }}>Play with me</Text>
-          </CollapseHeader>
-          <CollapseBody
+          </CollapseHeader> */}
+          {/* <CollapseBody
             style={{
               alignItems: "center",
               justifyContent: "center",
@@ -75,7 +94,7 @@ class FunCollapser extends Component {
                 />
               </CollapseHeader>
             </Collapse>
-          </CollapseBody>
+          </CollapseBody> */}
         </Collapse>
 
         <Collapse>

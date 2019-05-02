@@ -62,7 +62,7 @@ class PetRoom4 extends Component {
     return (
       <>
         <ImageBackground
-          source={require("../assets/vet.png")}
+          source={require("../assets/petvet.png")}
           style={styles.stylee}
         >
           <VetCollapse />

@@ -104,7 +104,7 @@ class PetRoom extends Component {
             <AnimatedMsgs
               msg={`Look like ${
                 petStore.pet.name
-              } \n hasn’t been fed for a while,\nhow about you give him something to eat?`}
+              } hasn’t been fed for a while, how about you give your pet something to eat?`}
               s={{ fontSize: 25, fontFamily: "Noteworthy-Bold" }}
               time="9500"
               delay={0}

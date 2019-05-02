@@ -22,17 +22,6 @@ class SleepButton extends Component {
 
   handlePress = () => {
     PetStore.putDogtoBed(this.props.sleep);
-    this.setState({ showToast: true });
-    Toast.show({
-      text: "Lullabye",
-      textStyle: { color: "black", fontSize: 30 },
-      buttonText: "X",
-      duration: 3000,
-      position: "top",
-      type: "success",
-      buttonTextStyle: { color: "black" },
-      buttonStyle: { backgroundColor: "transparent" }
-    });
     this.bounce();
   };
   render() {
