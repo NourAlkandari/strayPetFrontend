@@ -32,7 +32,10 @@ class PetRoom4 extends Component {
       return (
         <Image
           source={require("..//assets/sick-doggo.gif")}
-          style={{ width: "100%", height: "100%" }}
+          style={{
+            width: "100%",
+            height: "100%"
+          }}
         />
       );
     } else {
@@ -66,16 +69,18 @@ class PetRoom4 extends Component {
           style={styles.stylee}
         >
           <VetCollapse />
-          <Left>
+          {/* <Left>
             <AnimatedMsgs
               msg={`Looks like poor ${petStore.pet.name} \n is sick.`}
               s={{ fontSize: 25, fontFamily: "Noteworthy-Bold" }}
               time="9500"
               delay={0}
               anime="bounceInDown"
-            />
-            <View style={styles.iconRow}>{this._displayPet()}</View>
-          </Left>
+            /> */}
+
+          <View style={styles.iconRow}>{this._displayPet()}</View>
+
+          {/* </Left> */}
         </ImageBackground>
       </>
     );
@@ -111,7 +116,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-evenly",
-    alignItems: "center",
-    padding: 20
+    alignItems: "center"
   }
 });

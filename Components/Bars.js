@@ -63,9 +63,9 @@ const styles = StyleSheet.create({
     borderColor: "#DCDCDC"
   },
   label: {
-    color: "#999",
-    fontSize: 14,
-    fontWeight: "500",
+    color: "black",
+    fontSize: 18,
+    fontWeight: "bold",
     marginBottom: 0
   }
 });
