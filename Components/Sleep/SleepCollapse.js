@@ -1,6 +1,6 @@
 //react native and base
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, TouchableOpacity, Text } from "react-native";
 import { Icon } from "native-base";
 import { observer } from "mobx-react";
 import {
@@ -9,15 +9,16 @@ import {
   CollapseBody
 } from "accordion-collapse-react-native";
 
+import SleepButton from "./SleepButton";
+
 //Components
-import FunStateButtons from "./FunStateButtons";
-import BadFunButtons from "./BadFunButtons";
+import BadStateButtons from "../Feeding/BadStateButtons";
 import Bars from "../Bars";
 
 //stores
 import petStore from "../../Store/PetStore";
 
-class FunCollapser extends Component {
+class SleepCollapse extends Component {
   state = {
     collapsed: false //do not show the body by default
   };
@@ -39,11 +40,14 @@ class FunCollapser extends Component {
             }}
           >
             <View style={{ width: "25%", alignItems: "center" }}>
-              <Icon type="FontAwesome" name="soccer-ball-o" />
+              <SleepButton
+                itemImage={require("../../assets/petbed.png")}
+                sleep={"Sleep"}
+              />
             </View>
-            <Text style={{ fontFamily: "Noteworthy-Bold" }}>Play with me</Text>
+            <Text style={{ fontFamily: "Noteworthy-Bold" }}>Put me to bed</Text>
           </CollapseHeader>
-          <CollapseBody
+          {/* <CollapseBody
             style={{
               alignItems: "center",
               justifyContent: "center",
@@ -53,31 +57,14 @@ class FunCollapser extends Component {
           >
             <Collapse style={{ flexDirection: "row" }}>
               <CollapseHeader>
-                <BadFunButtons
-                  itemImage={require("../../assets/toy1.png")}
-                  Entertaintype={"Put to Bed"}
+                <BadStateButtons
+                  itemImage={require("../../assets/petbed.png")}
+                  sleep={"Sleep"}
                 />
               </CollapseHeader>
             </Collapse>
-            <Collapse style={{ flexDirection: "row" }}>
-              <CollapseHeader>
-                <FunStateButtons
-                  itemImage={require("../../assets/syring.png")}
-                  Entertaintype={"Syringe"}
-                />
-              </CollapseHeader>
-            </Collapse>
-            <Collapse style={{ flexDirection: "row" }}>
-              <CollapseHeader>
-                <FunStateButtons
-                  itemImage={require("../../assets/tennisball.png")}
-                  Entertaintype={"Play"}
-                />
-              </CollapseHeader>
-            </Collapse>
-          </CollapseBody>
+          </CollapseBody> */}
         </Collapse>
-
         <Collapse>
           <CollapseHeader
             style={{
@@ -86,21 +73,12 @@ class FunCollapser extends Component {
               padding: 10
             }}
           >
-            <Bars states={petStore.pet.state.fun} name="Fun" />
+            <Bars states={petStore.pet.state.sleep} name="Sleep" />
           </CollapseHeader>
-        </Collapse>
-        <Collapse>
-          <CollapseHeader
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              padding: 10
-            }}
-          />
         </Collapse>
       </View>
     );
   }
 }
 
-export default observer(FunCollapser);
+export default observer(SleepCollapse);

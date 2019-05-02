@@ -63,6 +63,7 @@ class PetStore {
       console.error(err);
     }
   };
+
   dogEntertain = async entertainmentItem => {
     try {
       let Item = {
@@ -71,6 +72,33 @@ class PetStore {
       console.log("HELLOOOOOOO");
       const res = await instance.post("/api/pet/entertain/", Item);
       const petState = res.data;
+      this.pet.state = petState;
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  putDogtoBed = async sleepItem => {
+    try {
+      let Item = {
+        sleep: sleepItem
+      };
+      const res = await instance.post("/api/pet/sleep/", Item);
+      const petState = res.data;
+      this.pet.state = petState;
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  takeToVet = async vetItem => {
+    try {
+      let Item = {
+        vet: vetItem
+      };
+      const res = await instance.post("/api/pet/syringe/", Item);
+      const petState = res.data;
+      console.log("AFTER VET", petState);
       this.pet.state = petState;
     } catch (err) {
       console.error(err);
