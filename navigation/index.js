@@ -34,15 +34,15 @@ const StackNav = createStackNavigator(
     defaultNavigationOptions: {
       headerTintColor: "black",
       headerStyle: {
-        backgroundColor: "#ffeaea"
+        backgroundColor: "transparent"
       }
       // headerTitleStyle: {
       //   fontWeight: "bold"
       // }
-    },
-    cardStyle: {
-      backgroundColor: "#ffeaea"
     }
+    // cardStyle: {
+    //  <Image>
+    // }
   }
 );
 

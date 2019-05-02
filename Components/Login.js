@@ -1,7 +1,12 @@
 // React Libraries and Native Base
 import React, { Component } from "react";
 import { observer } from "mobx-react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  TouchableOpacity,
+  ImageBackground,
+  Image
+} from "react-native";
 import { Form, Item, Input, Text, View, Icon } from "native-base";
 
 // Store
@@ -14,7 +19,10 @@ class Login extends Component {
     // email: ""
   };
   static navigationOptions = {
-    title: "Login"
+    title: "Login",
+    headerStyle: {
+      ImageBackground: <Image source={require("../assets/bgforall.jpg")} />
+    }
   };
 
   // ChangeTextUsername = (value)=>{
@@ -50,30 +58,35 @@ class Login extends Component {
   render() {
     return (
       <>
-        <Form>
-          <Item>
-            <Icon type="FontAwesome" name="user" />
-            <Input
-              style={styles.inputBox}
-              placeholder="Username"
-              autoCorrect={false}
-              autoCapitalize="none"
-              value={this.state.username}
-              onChangeText={this.handleChangeUsername}
-            />
-          </Item>
-          <Item>
-            <Icon type="FontAwesome" name="lock" />
-            <Input
-              style={styles.inputBox}
-              placeholder="Password"
-              autoCapitalize="none"
-              autoCorrect={false}
-              secureTextEntry={true}
-              value={this.state.password}
-              onChangeText={this.handleChangePassword}
-            />
-          </Item>
+        <ImageBackground
+          source={require("../assets/bgforall.jpg")}
+          style={styles.stylee}
+        >
+          <View style={{ marginTop: 150 }}>
+            <Item>
+              <Icon type="FontAwesome" name="user" />
+              <Input
+                style={styles.inputBox}
+                placeholder="Username"
+                autoCorrect={false}
+                autoCapitalize="none"
+                value={this.state.username}
+                onChangeText={this.handleChangeUsername}
+              />
+            </Item>
+            <Item>
+              <Icon type="FontAwesome" name="lock" />
+              <Input
+                style={styles.inputBox}
+                placeholder="Password"
+                autoCapitalize="none"
+                autoCorrect={false}
+                secureTextEntry={true}
+                value={this.state.password}
+                onChangeText={this.handleChangePassword}
+              />
+            </Item>
+          </View>
 
           <View style={styles.container} />
 
@@ -95,7 +108,7 @@ class Login extends Component {
               </Text>
             </TouchableOpacity>
           </View>
-        </Form>
+        </ImageBackground>
       </>
     );
   }
@@ -106,6 +119,11 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: "center",
     alignItems: "center"
+  },
+  stylee: {
+    flex: 1,
+    width: "100%",
+    height: "100%"
   },
 
   inputBox: {
@@ -123,7 +141,8 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     marginVertical: 10,
     paddingVertical: 13,
-    marginLeft: 50
+    marginLeft: 50,
+    marginBottom: 30
   },
   buttonText: {
     fontSize: 16,

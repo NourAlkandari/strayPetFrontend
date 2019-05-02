@@ -1,6 +1,11 @@
 // React Libraries and Native Base
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableWithoutFeedback } from "react-native";
+import {
+  StyleSheet,
+  View,
+  TouchableWithoutFeedback,
+  Image
+} from "react-native";
 import { Thumbnail, Toast } from "native-base";
 import * as Animatable from "react-native-animatable";
 
@@ -9,7 +14,8 @@ import PetStore from "../../Store/PetStore";
 
 class BadStateButtons extends Component {
   state = {
-    showToast: false
+    showToast: false,
+    bad: false
   };
   handleViewRef = ref => (this.view = ref);
 
@@ -22,7 +28,7 @@ class BadStateButtons extends Component {
 
   handlePress = () => {
     PetStore.dogFeed(this.props.foodtype);
-    this.setState({ showToast: true });
+    this.setState({ showToast: true, bad: true });
     Toast.show({
       text:
         "oops, that’s not a good idea. chocolate and cocoa products can kill your dog. Try to pick something more suitable. ",
@@ -36,6 +42,20 @@ class BadStateButtons extends Component {
     });
     this.bounce();
   };
+
+  _displayhand = () => {
+    if (this.state.bad) {
+      return (
+        <Animatable.View useNativeDriver animation="zoomIn" duration="2000">
+          <Image
+            source={require("../../assets/no-hand.gif")}
+            style={{ width: "90%", height: "90%" }}
+          />
+        </Animatable.View>
+      );
+    }
+  };
+
   render() {
     return (
       <>
@@ -47,6 +67,7 @@ class BadStateButtons extends Component {
         <TouchableWithoutFeedback onPress={this.handlePress}>
           <Animatable.View ref={this.handleViewRef}>
             <Thumbnail source={this.props.itemImage} style={styles.image} />
+            {this._displayhand()}
           </Animatable.View>
         </TouchableWithoutFeedback>
       </>
