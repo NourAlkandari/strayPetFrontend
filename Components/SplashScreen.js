@@ -43,7 +43,12 @@ class SplashScreen extends Component {
           <StatusBar barStyle="light-content" backgroundColor="#4F6D7A" />
           <Image
             source={require("../assets/test2.gif")}
-            style={{ width: "50%", height: "50%", backgroundColor: "rgba" }}
+            style={{
+              width: "65%",
+              height: "50%",
+              backgroundColor: "rgba",
+              marginTop: 70
+            }}
           />
 
           <Button
@@ -83,13 +88,18 @@ const styles = StyleSheet.create({
     marginBottom: 5
   },
   buttonBackground: {
-    backgroundColor: "#d3cfcf",
-    width: 90,
-    marginLeft: 10
+    marginTop: 30,
+    backgroundColor: "rgb(255,255,255)",
+    width: 120,
+    marginLeft: 10,
+
+    borderWidth: 8,
+    borderColor: "rgb(233,126,34)"
   },
   buttonText: {
     color: "black",
     fontSize: 30,
+    fontWeight: "bold",
     fontFamily: "Noteworthy-Bold"
   }
 });

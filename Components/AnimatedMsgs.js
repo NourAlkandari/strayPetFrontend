@@ -34,11 +34,11 @@ export default AnimatedMsgs;
 
 const styles = StyleSheet.create({
   message: {
-    marginTop: 20
+    marginTop: 40
   },
 
   textContainer: {
-    backgroundColor: "#FFF",
+    backgroundColor: "rgba(255,255,255, 0.9)",
     padding: 10,
     borderRadius: 11,
     marginLeft: 30,

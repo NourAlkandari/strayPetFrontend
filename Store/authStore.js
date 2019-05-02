@@ -71,8 +71,8 @@ class AuthStore {
     }
   };
 
-  logout = navigation => {
-    this.setUser();
+  logout = async navigation => {
+    await this.setUser();
     navigation.navigate("SplashScreen");
   };
 }

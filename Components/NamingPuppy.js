@@ -1,6 +1,12 @@
 //React libraries and native base
 import React, { Component } from "react";
-import { View, Image, StyleSheet, TextInput } from "react-native";
+import {
+  View,
+  Image,
+  StyleSheet,
+  TextInput,
+  ImageBackground
+} from "react-native";
 
 //Components
 import Button from "./button";
@@ -27,32 +33,38 @@ class NamingPuppy extends Component {
   render() {
     return (
       <>
-        <AnimatedMsgs
-          msg={
-            "Awesome! The world needs more people like you! \n First: Give your dog a name"
-          }
-          s={{ fontSize: 30, fontFamily: "Noteworthy-Bold" }}
-        />
+        <ImageBackground
+          source={require("../assets/starrybg.gif")}
+          style={styles.stylee}
+        >
+          <AnimatedMsgs
+            msg={
+              "Awesome! The world needs more people like you. \n First, give doggo a name…"
+            }
+            s={{ fontSize: 30, fontFamily: "Noteworthy-Bold" }}
+          />
 
-        <View style={styles.view}>
-          <Image
-            source={require("../assets/sad-doggo.gif")}
-            style={{ width: "50%", height: "50%" }}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="TYPE NAME HERE"
-            placeholderTextColor={styles.input}
-            onChangeText={name => this.setState({ name })}
-            value={this.state.name}
-          />
-          <Button
-            onPress={this.handlePress}
-            title="Save"
-            backgroundStyle={styles.buttonBackground}
-            textStyle={styles.buttonText}
-          />
-        </View>
+          <View style={styles.view}>
+            <Image
+              source={require("../assets/happy-doggo.gif")}
+              style={{ width: "50%", height: "50%" }}
+            />
+
+            <TextInput
+              style={styles.input}
+              placeholder="TYPE NAME HERE"
+              placeholderTextColor={styles.input}
+              onChangeText={name => this.setState({ name })}
+              value={this.state.name}
+            />
+            <Button
+              onPress={this.handlePress}
+              title="Save"
+              backgroundStyle={styles.buttonBackground}
+              textStyle={styles.buttonText}
+            />
+          </View>
+        </ImageBackground>
       </>
     );
   }
@@ -61,10 +73,15 @@ export default NamingPuppy;
 
 const styles = StyleSheet.create({
   message: {
-    marginTop: 20
+    marginTop: 40
   },
   image: {
     alignSelf: "center"
+  },
+  stylee: {
+    flex: 1,
+    width: "100%",
+    height: "100%"
   },
   textContainer: {
     backgroundColor: "#FFF",

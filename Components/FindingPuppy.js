@@ -11,6 +11,7 @@ import { observer } from "mobx-react";
 import LogoutButton from "./LogoutButton";
 import AnimatedMsgs from "./AnimatedMsgs";
 import soundStore from "../Store/soundStore";
+import authStore from "../Store/authStore";
 
 class FindingPuppy extends Component {
   static navigationOptions = {
@@ -27,6 +28,10 @@ class FindingPuppy extends Component {
     this.props.navigation.replace("NamingPuppy");
     soundStore.playSounds();
   };
+  handleLogout = () => {
+    const navigation = this.props.navigation;
+    authStore.logout(navigation);
+  };
   handlePressNo = () => {
     Toast.show({
       text: "It's ok! We will take it to the shelter. ",
@@ -38,7 +43,7 @@ class FindingPuppy extends Component {
       buttonTextStyle: { color: "black" },
       buttonStyle: { backgroundColor: "#fff" }
     });
-    this.props.navigation.replace("SplashScreen");
+    this.handleLogout();
   };
   render() {
     return (

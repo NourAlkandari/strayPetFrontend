@@ -19,7 +19,8 @@ class Login extends Component {
     // email: ""
   };
   static navigationOptions = {
-    title: "Login"
+    // title: "Login",
+    header: null
   };
 
   // ChangeTextUsername = (value)=>{
@@ -121,7 +122,6 @@ class Login extends Component {
 export default observer(Login);
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
     justifyContent: "center",
     alignItems: "center"
   },

@@ -13,6 +13,9 @@ class Register extends Component {
     password: "",
     email: ""
   };
+  static navigationOptions = {
+    header: null
+  };
 
   handleChangeUsername = value => {
     this.setState({ username: value });
@@ -31,7 +34,7 @@ class Register extends Component {
 
   render() {
     return (
-      <Form>
+      <Form style={{ marginTop: 80 }}>
         <Item>
           <Icon type="FontAwesome" name="user" />
           <Input
