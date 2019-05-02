@@ -53,7 +53,7 @@ class NamingPuppy extends Component {
             <TextInput
               style={styles.input}
               placeholder="TYPE NAME HERE"
-              placeholderTextColor={styles.input}
+              placeholderTextColor="rgba(255,255,255,0.5)"
               onChangeText={name => this.setState({ name })}
               value={this.state.name}
             />

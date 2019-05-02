@@ -26,7 +26,7 @@ class MuteButton extends Component {
           <Icon
             type="Octicons"
             name="unmute"
-            style={{ color: "Black", fontSize: 25, marginLeft: 10 }}
+            style={{ color: "black", fontSize: 25, marginLeft: 10 }}
             onPress={this.handleSound}
           />
         </View>
