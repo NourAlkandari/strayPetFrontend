@@ -19,10 +19,7 @@ class Login extends Component {
     // email: ""
   };
   static navigationOptions = {
-    title: "Login",
-    headerStyle: {
-      ImageBackground: <Image source={require("../assets/bgforall.jpg")} />
-    }
+    title: "Login"
   };
 
   // ChangeTextUsername = (value)=>{
@@ -64,7 +61,11 @@ class Login extends Component {
         >
           <View style={{ marginTop: 150 }}>
             <Item>
-              <Icon type="FontAwesome" name="user" />
+              <Icon
+                style={{ color: "#fff", fontSize: 30 }}
+                type="FontAwesome"
+                name="user"
+              />
               <Input
                 style={styles.inputBox}
                 placeholder="Username"
@@ -75,7 +76,11 @@ class Login extends Component {
               />
             </Item>
             <Item>
-              <Icon type="FontAwesome" name="lock" />
+              <Icon
+                style={{ color: "#fff", fontSize: 30 }}
+                type="FontAwesome"
+                name="lock"
+              />
               <Input
                 style={styles.inputBox}
                 placeholder="Password"
@@ -128,7 +133,7 @@ const styles = StyleSheet.create({
 
   inputBox: {
     width: 300,
-    backgroundColor: "rgba(255, 255,255,0.2)",
+    backgroundColor: "rgb(255, 255,255)",
     borderRadius: 25,
     paddingHorizontal: 16,
     fontSize: 16,

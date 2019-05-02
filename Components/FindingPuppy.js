@@ -14,8 +14,7 @@ import soundStore from "../Store/soundStore";
 
 class FindingPuppy extends Component {
   static navigationOptions = {
-    headerRight: <LogoutButton />,
-    headerLeft: null
+    header: null
   };
 
   state = {
@@ -25,7 +24,7 @@ class FindingPuppy extends Component {
     soundStore.playSadDog();
   }
   handlePressOk = () => {
-    this.props.navigation.navigate("NamingPuppy");
+    this.props.navigation.replace("NamingPuppy");
     soundStore.playSounds();
   };
   handlePressNo = () => {
@@ -39,7 +38,7 @@ class FindingPuppy extends Component {
       buttonTextStyle: { color: "black" },
       buttonStyle: { backgroundColor: "#fff" }
     });
-    this.props.navigation.navigate("SplashScreen");
+    this.props.navigation.replace("SplashScreen");
   };
   render() {
     return (
@@ -56,7 +55,11 @@ class FindingPuppy extends Component {
           /> */}
           <View style={styles.textContainer}>
             <TypeWriter
-              style={{ fontSize: 30, fontFamily: "Noteworthy-Bold" }}
+              style={{
+                fontSize: 30,
+                fontFamily: "Noteworthy-Bold",
+                marginTop: 30
+              }}
               typing={1}
               maxDelay={200}
             >
@@ -72,11 +75,15 @@ class FindingPuppy extends Component {
               onPress={this.handlePressOk}
               style={{ marginBottom: 10, marginTop: 10 }}
             >
-              <Text>Of course! Can't let the doggie suffer</Text>
+              <Text style={{ fontSize: 20, fontFamily: "Noteworthy-Bold" }}>
+                Of course! Can't let the doggie suffer
+              </Text>
             </Button>
 
             <Button block light onPress={this.handlePressNo}>
-              <Text>I don't think I'm ready yet! </Text>
+              <Text style={{ fontSize: 20, fontFamily: "Noteworthy-Bold" }}>
+                I don't think I'm ready yet!{" "}
+              </Text>
             </Button>
           </Animatable.View>
           <Image

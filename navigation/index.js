@@ -39,10 +39,10 @@ const StackNav = createStackNavigator(
       // headerTitleStyle: {
       //   fontWeight: "bold"
       // }
+    },
+    cardStyle: {
+      backgroundColor: "transparent"
     }
-    // cardStyle: {
-    //  <Image>
-    // }
   }
 );
 

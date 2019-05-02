@@ -43,18 +43,18 @@ class BadStateButtons extends Component {
     this.bounce();
   };
 
-  _displayhand = () => {
-    if (this.state.bad) {
-      return (
-        <Animatable.View useNativeDriver animation="zoomIn" duration="2000">
-          <Image
-            source={require("../../assets/no-hand.gif")}
-            style={{ width: "90%", height: "90%" }}
-          />
-        </Animatable.View>
-      );
-    }
-  };
+  // _displayhand = () => {
+  //   if (this.state.bad) {
+  //     return (
+  //       <Animatable.View useNativeDriver animation="zoomIn" duration="2000">
+  //         <Image
+  //           source={require("../../assets/no-hand.gif")}
+  //           style={{ width: "90%", height: "90%" }}
+  //         />
+  //       </Animatable.View>
+  //     );
+  //   }
+  // };
 
   render() {
     return (
@@ -67,7 +67,7 @@ class BadStateButtons extends Component {
         <TouchableWithoutFeedback onPress={this.handlePress}>
           <Animatable.View ref={this.handleViewRef}>
             <Thumbnail source={this.props.itemImage} style={styles.image} />
-            {this._displayhand()}
+            {/* {this._displayhand()} */}
           </Animatable.View>
         </TouchableWithoutFeedback>
       </>

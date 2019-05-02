@@ -24,7 +24,7 @@ class StateButtons extends Component {
     PetStore.dogFeed(this.props.foodtype);
     this.setState({ showToast: true });
     Toast.show({
-      text: "Yes! That's Good For Puppy's Health",
+      text: "Yes! That's a puupy's food, it is good for puppy's health",
       textStyle: { color: "black", fontSize: 30 },
       buttonText: "X",
       duration: 3000,

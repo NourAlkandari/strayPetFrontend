@@ -16,9 +16,7 @@ class AuthStore {
       const user = res.data;
       await this.setUser(user.token);
 
-      //       navigation.navigate("TapsView");
-
-      navigation.navigate("FoundThePuppy");
+      navigation.navigate("TapsView");
     } catch (error) {
       console.log(error);
     }

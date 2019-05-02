@@ -12,8 +12,7 @@ import petStore from "../Store/PetStore";
 
 class NamingPuppy extends Component {
   static navigationOptions = {
-    headerRight: <LogoutButton />,
-    headerLeft: null
+    header: null
   };
 
   state = {
