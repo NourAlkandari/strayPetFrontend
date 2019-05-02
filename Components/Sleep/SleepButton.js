@@ -1,21 +1,15 @@
 // React Libraries and Native Base
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  View,
-  TouchableWithoutFeedback,
-  Image
-} from "react-native";
+import { StyleSheet, TouchableWithoutFeedback } from "react-native";
 import { Thumbnail, Toast } from "native-base";
 import * as Animatable from "react-native-animatable";
 
 //Stores
 import PetStore from "../../Store/PetStore";
 
-class BadStateButtons extends Component {
+class SleepButton extends Component {
   state = {
-    showToast: false,
-    bad: false
+    showToast: false
   };
   handleViewRef = ref => (this.view = ref);
 
@@ -27,35 +21,20 @@ class BadStateButtons extends Component {
       );
 
   handlePress = () => {
-    PetStore.dogFeed(this.props.foodtype);
-    this.setState({ showToast: true, bad: true });
+    PetStore.putDogtoBed(this.props.sleep);
+    this.setState({ showToast: true });
     Toast.show({
-      text:
-        "oops, that’s not a good idea. chocolate and cocoa products can kill your dog. Try to pick something more suitable. ",
+      text: "Lullabye",
       textStyle: { color: "black", fontSize: 30 },
       buttonText: "X",
-      duration: 6000,
+      duration: 3000,
       position: "top",
-      type: "danger",
+      type: "success",
       buttonTextStyle: { color: "black" },
       buttonStyle: { backgroundColor: "transparent" }
     });
     this.bounce();
   };
-
-  // _displayhand = () => {
-  //   if (this.state.bad) {
-  //     return (
-  //       <Animatable.View useNativeDriver animation="zoomIn" duration="2000">
-  //         <Image
-  //           source={require("../../assets/no-hand.gif")}
-  //           style={{ width: "90%", height: "90%" }}
-  //         />
-  //       </Animatable.View>
-  //     );
-  //   }
-  // };
-
   render() {
     return (
       <>
@@ -67,7 +46,6 @@ class BadStateButtons extends Component {
         <TouchableWithoutFeedback onPress={this.handlePress}>
           <Animatable.View ref={this.handleViewRef}>
             <Thumbnail source={this.props.itemImage} style={styles.image} />
-            {/* {this._displayhand()} */}
           </Animatable.View>
         </TouchableWithoutFeedback>
       </>
@@ -75,7 +53,8 @@ class BadStateButtons extends Component {
   }
 }
 
-export default BadStateButtons;
+export default SleepButton;
+
 const styles = StyleSheet.create({
   menuItem: {
     // width: "40%",
@@ -85,8 +64,8 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    // width: 80,
-    // height: 80,
+    width: 80,
+    height: 80,
     marginRight: 25,
     marginLeft: 25,
     opacity: 0.8,

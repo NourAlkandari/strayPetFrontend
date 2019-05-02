@@ -6,6 +6,8 @@ import { Container, Tab, Tabs, ScrollableTab } from "native-base";
 //Components
 import PetRoom from "./PetRoom";
 import PetRoom2 from "./PetRoom2";
+import PetRoom3 from "./PetRoom3";
+import PetRoom4 from "./PetRoom4";
 import LogoutButton from "./LogoutButton";
 import MuteButton from "./MuteButton";
 
@@ -36,6 +38,12 @@ class TabsView extends Component {
           </Tab>
           <Tab heading="Play">
             <PetRoom2 />
+          </Tab>
+          <Tab heading="Put to Bed">
+            <PetRoom3 />
+          </Tab>
+          <Tab heading="Vet">
+            <PetRoom4 />
           </Tab>
         </Tabs>
       </Container>
