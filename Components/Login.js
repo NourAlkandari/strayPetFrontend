@@ -103,10 +103,12 @@ class Login extends Component {
           </TouchableOpacity>
 
           <View style={styles.container}>
-            <Text>{"\n"}Do you have account?</Text>
+            <Text style={{ color: "#fff", fontSize: 20, fontWeight: "bold" }}>
+              {"\n"}Don't have an account?
+            </Text>
             <TouchableOpacity>
               <Text
-                style={{ color: "red" }}
+                style={{ color: "#fff", fontSize: 17, fontWeight: "bold" }}
                 onPress={() => this.props.navigation.navigate("Register")}
               >
                 {"\n"}
@@ -133,10 +135,10 @@ const styles = StyleSheet.create({
 
   inputBox: {
     width: 300,
-    backgroundColor: "rgb(255, 255,255)",
+    backgroundColor: "rgba(255, 255,255, 0.5)",
     borderRadius: 25,
     paddingHorizontal: 16,
-    fontSize: 16,
+    fontSize: 25,
     color: "black",
     marginVertical: 10
   },
@@ -150,8 +152,8 @@ const styles = StyleSheet.create({
     marginBottom: 30
   },
   buttonText: {
-    fontSize: 16,
-    fontWeight: "500",
+    fontSize: 20,
+    fontWeight: "bold",
     color: "#ffffff",
     textAlign: "center"
   }
